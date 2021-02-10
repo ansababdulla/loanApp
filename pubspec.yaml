@@ -66,6 +66,10 @@ flutter:
     - assets/images/g10.png
     - assets/images/03-Award.png
     - assets/images/Image 1.png
+    - assets/images/001-home.png
+    - assets/images/002-car.png
+    - assets/images/003-book.png
+    - assets/images/004-man.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

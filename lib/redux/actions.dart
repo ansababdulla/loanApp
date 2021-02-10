@@ -1,7 +1,7 @@
-import '../models/dashboard.dart';
+// import '../models/dashboard.dart';
 
-class UpdateFadeAction {
-  final Dashboard fadeDash;
+class UpdateDrinkAction {
+  final String updateDash;
 
-  UpdateFadeAction(this.fadeDash);
+  UpdateDrinkAction(this.updateDash);
 }

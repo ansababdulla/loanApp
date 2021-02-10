@@ -1,14 +1,15 @@
-import '../redux/app_state.dart';
-import '../redux/actions.dart';
 
 
-AppState mainReducer(state,action) {
-  return AppState(fadeDash: fadeReducer(state.fadeDash,action));
-}
 
-fadeReducer(fadeDash,action) {
-  if (action is UpdateFadeAction) {
-    return action.fadeDash;
+import 'package:chickly/redux/actions.dart';
+import 'package:chickly/redux/app_state.dart';
+
+AppState updateDrinksReducer(AppState state, dynamic action) {
+  if (action is UpdateDrinkAction) {
+    return AppState(
+        fadeDash: action.updateDash
+    );
   }
-  return fadeDash;
+
+  return state;
 }

@@ -1,7 +1,10 @@
 import 'dart:developer';
 
+import 'package:chickly/redux/actions.dart';
+import 'package:chickly/redux/app_state.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Dashboard/dashboard.dart';
 
@@ -27,9 +30,9 @@ class _RewardsAndOffers extends State<RewardsAndOffers> with TickerProviderState
 
     controller.forward();
 
+
+
   }
-
-
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity:animation,
@@ -39,7 +42,9 @@ class _RewardsAndOffers extends State<RewardsAndOffers> with TickerProviderState
         ),
         backgroundColor: Color(0xff191B23),
         body: new Container(
-          child: ListView(
+          child: StoreConnector<AppState,String>(
+            converter: (store) => store.state.fadeDash,
+            builder: (context,String fadeDash) => ListView(
             children: [
             Padding(padding: EdgeInsets.only(left: 20,right: 20),
               child:Container(
@@ -57,25 +62,48 @@ class _RewardsAndOffers extends State<RewardsAndOffers> with TickerProviderState
                     ),
                     Column(
                       children:[
-                        Row(
-                          children:[
-                            Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 36),
-                                child: GestureDetector(
-                                  child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
-                                  onTap: () {
-                                    Navigator.push(context,MaterialPageRoute(builder: (context) => Dashboard()));
-                                  },
-                                ),  
-                            ),
-                            Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 115),
-                                child: GestureDetector(
-                                  child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
-                                  onTap: () {
-                                  },
-                                ),  
-                            ),
-                          ]
-                        )
+                            Row(
+                              children:[
+                                Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 36),
+                                    child: GestureDetector(
+                                      child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white12,fontWeight: FontWeight.w600)),
+                                      onTap: () {
+                                        StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Dashboard'));
+                                        Navigator.push(context,MaterialPageRoute(builder: (context) => Dashboard()));
+                                      },
+                                    ),  
+                                ),
+                                Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 115),
+                                    child: GestureDetector(
+                                      child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
+                                      onTap: () {
+                                        StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Rewards'));
+                                        Navigator.push(context,MaterialPageRoute(builder: (context) => RewardsAndOffers()));
+                                      },
+                                    ),  
+                                ),
+                              ]
+                            )
+                        // Row(
+                        //   children:[
+                        //     Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 36),
+                        //         child: GestureDetector(
+                        //           child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
+                        //           onTap: () {
+                                    // Navigator.push(context,MaterialPageRoute(builder: (context) => Dashboard()));
+                        //           },
+                        //         ),  
+                        //     ),
+                        //     Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 115),
+                        //         child: GestureDetector(
+                        //           child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
+                        //           onTap: () {
+                        //             StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Rewards'));
+                        //           },
+                        //         ),  
+                        //     ),
+                        //   ]
+                        // )
                       ]
                     )
                   ]
@@ -174,23 +202,24 @@ class _RewardsAndOffers extends State<RewardsAndOffers> with TickerProviderState
                     Text('Airpods are coming\nwith your next order',style:GoogleFonts.montserrat(fontSize: 18,fontWeight: FontWeight.w700)),
                     Image.asset('assets/images/Image 1.png'),
                     Text('Shop with chickly store by 3rd december\nto be one of the 10 members to win',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.black,fontWeight: FontWeight.w600)),
-                                                  Container(
-                                width: 120,
-                                height: 38,
-                                child: RaisedButton(
-                                  color: Color(0xff6478D3),
-                                    child:Text('Shop now',style:GoogleFonts.montserrat(fontSize: 12,fontWeight: FontWeight.w600,color: Colors.white)),
-                                    onPressed: () => {
-                                    },
-                                    shape: new RoundedRectangleBorder(
-                                      borderRadius:new BorderRadius.circular(30.0)
-                                    ),
-                                  ),
-                              ),
+                    Container(
+                      width: 120,
+                      height: 38,
+                      child: RaisedButton(
+                        color: Color(0xff6478D3),
+                          child:Text('Shop now',style:GoogleFonts.montserrat(fontSize: 12,fontWeight: FontWeight.w600,color: Colors.white)),
+                          onPressed: () => {
+                          },
+                          shape: new RoundedRectangleBorder(
+                            borderRadius:new BorderRadius.circular(30.0)
+                          ),
+                        ),
+                    ),
                   ]
                 ),
               ),)
             ],
+          ),
           ),
         ),
         bottomNavigationBar: Container(                                        

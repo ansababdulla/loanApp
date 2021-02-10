@@ -1,4 +1,5 @@
-class Dashboard {
-  String fadeDash;
-  Dashboard(this.fadeDash);
+class Drink {
+  String name;
+
+  Drink(this.name);
 }

@@ -1,12 +1,9 @@
-
+// import '../models/dashboard.dart';
 
 class AppState {
   final String fadeDash;
 
-  AppState({this.fadeDash
+  AppState({
+    this.fadeDash = ''
   });
-
-  factory AppState.initial(){
-    return AppState(fadeDash:'Dashboard');
-  }
 }
