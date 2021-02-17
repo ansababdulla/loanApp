@@ -89,7 +89,7 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                                       Padding(
                                         padding:EdgeInsets.only(left:size.width * 0.11,right: 39,bottom: 22),
                                         child: Text('mobile number linked with\nbank is needed to apply',
-                                          style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: size.height * 0.017 ,fontWeight: FontWeight.w400))
+                                          style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
                                         ),
                                       ),
                                       Padding(

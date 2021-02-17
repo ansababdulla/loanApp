@@ -289,7 +289,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(left:21,right: 21,bottom:15),
+                Padding(padding: EdgeInsets.only(left:Responsive.width(21, context),right: Responsive.width(21, context),bottom:Responsive.height(15, context)),
                 child: Container(
                   width: Responsive.width(335, context),
                   height: Responsive.height(374, context),
@@ -308,7 +308,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                             Padding(padding:EdgeInsets.only(top:Responsive.height(27, context)),child:Text('Check your credit score',style: GoogleFonts.montserrat(fontSize:Responsive.height(16, context),fontWeight:FontWeight.w700,color: Colors.white),)),
                             Padding(child: Text('Get free credit report',style: GoogleFonts.montserrat(fontSize:Responsive.height(12, context),fontWeight:FontWeight.w600,color: Color(0xffB5BABB)),),padding: EdgeInsets.only(bottom:Responsive.width(13, context)),),
                             CircularPercentIndicator(
-                            radius: 180.0,
+                            radius: Responsive.width(180, context),
                             animation: true,
                             animationDuration: 1200,
                             lineWidth: 15.0,
@@ -317,21 +317,21 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('820',style: GoogleFonts.montserrat(color: Colors.white,fontSize:22,fontWeight: FontWeight.w600),),
-                                Text('Excellent',style:GoogleFonts.montserrat(color:Colors.white,fontSize:12,fontWeight: FontWeight.w300))
+                                Text('820',style: GoogleFonts.montserrat(color: Colors.white,fontSize:Responsive.height(22, context),fontWeight: FontWeight.w700),),
+                                Text('Excellent',style:GoogleFonts.montserrat(color:Color(0xffB5BABB),fontSize:Responsive.height(11, context),fontWeight: FontWeight.w600))
                               ],
                             ),
                             circularStrokeCap: CircularStrokeCap.butt,
                             backgroundColor: Colors.white,
                             progressColor: Color(0xff6478D3),
                           ),
-                          Padding(padding: EdgeInsets.only(top: 31),
+                          Padding(padding: EdgeInsets.only(top: Responsive.height(31, context)),
                           child:Container(
-                            width: 108,
-                            height: 34,
+                            width: Responsive.width(108, context),
+                            height: Responsive.height(34, context),
                             child:RaisedButton(onPressed: (){ },
                             color: Color(0xff191B23),
-                            child:Text('View now',style:GoogleFonts.montserrat(fontSize: 12,color: Colors.white,fontWeight: FontWeight.w500)),
+                            child:Text('View now',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
                             shape: new RoundedRectangleBorder(
                             borderRadius:new BorderRadius.circular(30.0)
                             ),
@@ -342,10 +342,10 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(left:21,right: 21,bottom:15),
+                Padding(padding: EdgeInsets.only(left:Responsive.width(21, context),right: Responsive.width(21, context),bottom:Responsive.height(15, context)),
                 child: Container(
-                  width: 333,
-                  height: 162,
+                  width: Responsive.width(333, context),
+                  height: Responsive.height(162, context),
                   color: Color(0xff191B23),
                     child: Container(
                       decoration: BoxDecoration(color: Color(0xff6478D3),
@@ -356,32 +356,33 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                           children:<Widget>[
                             Row(children: <Widget>[
                               Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children:<Widget>[
-                                  Padding(padding: EdgeInsets.only(left:26,top:26,right:37),
-                                  child: Text('Congratulations for your',style: GoogleFonts.montserrat(fontSize:14,color:Colors.white,fontWeight:FontWeight.w300),),),
-                                  Padding(padding: EdgeInsets.only(left:26,right:37,bottom:25),
-                                  child: Text('Pre-approved loan',style: GoogleFonts.montserrat(fontSize:18,color:Colors.white,fontWeight:FontWeight.w600),),)
+                                  Padding(padding: EdgeInsets.only(left:Responsive.width(26, context),top:Responsive.height(26, context),right:Responsive.width(37, context)),
+                                  child: Text('Congratulations for your',style: GoogleFonts.montserrat(fontSize:Responsive.height(12, context),color:Color(0xffE8E9EA),fontWeight:FontWeight.w400),),),
+                                  Padding(padding: EdgeInsets.only(left:Responsive.width(26, context),right:Responsive.width(37, context),bottom:Responsive.height(25, context)),
+                                  child: Text('Pre-approved loan',style: GoogleFonts.montserrat(fontSize:Responsive.height(15 , context),color:Colors.white,fontWeight:FontWeight.w700),),)
                                 ]
                               ),
-                              Padding(padding:EdgeInsets.only(top:15,right: 27,bottom: 17),
+                              Padding(padding:EdgeInsets.only(top:Responsive.height(15, context),right: Responsive.width(27, context),bottom: Responsive.height(17, context)),
                               child:Image.asset('assets/images/Group 3571.png'))
                             ],),
                             Row(
                               children: <Widget>[
                               Column(
                                 children:<Widget>[
-                                  Padding(padding: EdgeInsets.only(left:25,right: 53),
-                                  child:Text('125000',style: GoogleFonts.montserrat(fontSize:26,color:Colors.white,fontWeight:FontWeight.w600),) ,),
-                                  Padding(padding: EdgeInsets.only(left:25,right: 54),
-                                  child:Text('12% interest rate',style: GoogleFonts.montserrat(fontSize:12,color:Colors.white,fontWeight:FontWeight.w300),))
+                                  Padding(padding: EdgeInsets.only(left:Responsive.width(25, context),right: Responsive.width(53, context)),
+                                  child:Text('125000',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color:Colors.white,fontWeight:FontWeight.w700),) ,),
+                                  Padding(padding: EdgeInsets.only(left:Responsive.width(25, context),right: Responsive.width(54, context)),
+                                  child:Text('12% interest rate',style: GoogleFonts.montserrat(fontSize:Responsive.height(12, context),color:Color(0xffF7F8F9),fontWeight:FontWeight.w400),))
                                 ]
                               ),
                                 Container(
-                                  width: 120,
-                                  height: 38,
+                                  width: Responsive.width(120, context),
+                                  height: Responsive.height(38, context),
                                   child: RaisedButton(
                                     color: Colors.white,
-                                      child:Text('Apply now',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.black,fontWeight: FontWeight.w500)),
+                                      child:Text('Apply now',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.black,fontWeight: FontWeight.w700)),
                                       onPressed: () => {
                                         Navigator.of(context).pushReplacement(
                                           MaterialPageRoute(
