@@ -30,6 +30,8 @@ dependencies:
   percent_indicator: ^2.1.9
   flutter_redux: ^0.7.0
   redux: ^4.0.0+3
+  image_picker: ^0.6.7+7
+  image_cropper: ^1.0.2
 
 
 
@@ -73,6 +75,8 @@ flutter:
     - assets/images/004-man.png
     - assets/images/Group 15.png
     - assets/images/Avatar Selected.png
+    - assets/images/basicinfoicon.png
+    - assets/images/roundedqnmark.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
