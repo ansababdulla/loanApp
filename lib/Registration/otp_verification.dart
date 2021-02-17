@@ -67,7 +67,7 @@ class _OtpVerificaion extends State<OtpVerfication> with TickerProviderStateMixi
                                   Navigator.push(context, MaterialPageRoute(builder: (context) => Registration()))
                                 },
                               ),),
-                              Padding(padding: EdgeInsets.only(left: 40,right: 39,bottom: 8),
+                              Padding(padding: EdgeInsets.only(left: 30,right: 39,bottom: 8),
                               child: Text('We have send\nyou an OTP',style:GoogleFonts.montserrat(fontSize:26,fontWeight: FontWeight.w500,color: Colors.black),),),
                               Padding(padding: EdgeInsets.only(left: 40,right: 50,bottom: 28),
                               child: Text('OTP is necessary for us to\nascertain your number -\n889232120',style:GoogleFonts.montserrat(fontSize:14,fontWeight: FontWeight.w400,color: Colors.black),),),

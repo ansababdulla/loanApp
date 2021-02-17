@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:chickly/models/dashboard.dart';
 import 'package:chickly/redux/actions.dart';
+import 'package:chickly/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -35,10 +36,6 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
 
   }
     final nav = new Container(                                        
-          decoration: BoxDecoration(                                                   
-            borderRadius: BorderRadius.all(                                           
-              Radius.circular(10.0)),
-          ),
           child: ClipRRect(                                                            
             borderRadius: BorderRadius.all(      
               Radius.circular(30.0)                                                                               
@@ -49,7 +46,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
               selectedItemColor: Colors.black87,
               items: <BottomNavigationBarItem>[                                        
                 BottomNavigationBarItem(                                               
-                  icon: Icon(Icons.home),label: 'Home'),
+                  icon: Icon(Icons.home),label: 'Hom'),
                 BottomNavigationBarItem(                                               
                   icon: Icon(Icons.attach_money),label: 'Home'),
                 BottomNavigationBarItem(                                               
@@ -63,8 +60,50 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
   Widget build(BuildContext context) {
     return FadeTransition(opacity: animation,
       child: Scaffold(
-        appBar: AppBar(
+        appBar:AppBar(
           backgroundColor: Color(0xff191B23),
+          actions: <Widget>[
+
+            IconButton(
+              icon: Image.asset('assets/images/Group 15.png',),
+              onPressed: () => {},
+            ),
+            IconButton(
+              icon: Image.asset('assets/images/Avatar Selected.png'),
+              onPressed: () => {},
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.notifications_none,
+                color: Colors.white,
+                size: 28,
+              ),
+              onPressed: () {
+                // do something
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.message,
+                color: Colors.white,
+                size:28
+              ),
+              onPressed: () {
+                // do something
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.search,
+                color: Colors.white,
+                size:28
+              ),
+              onPressed: () {
+                // do something
+              },
+            )
+
+          ],
         ),
         backgroundColor: Color(0xff191B23),
         body: Container(
@@ -74,8 +113,9 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
               children: <Widget>[
                 Padding(padding: EdgeInsets.only(left: 20,right: 20),
                 child:Container(
-                  width: 315,
-                  height: 60,
+                  width: Responsive.width(315, context),
+                  height: Responsive.height(60,context)
+                  ,
                   color: Color(0xff191B23),
                   child: Column(
                     children:[
@@ -92,16 +132,16 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                           if (fadeDash == "Dashboard") ...[
                             Row(
                               children:[
-                                Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 36),
+                                Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(36, context)),
                                     child: GestureDetector(
-                                      child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
+                                      child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w600)),
                                       onTap: () {
                                       },
                                     ),  
                                 ),
-                                Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 115),
+                                Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(115, context)),
                                     child: GestureDetector(
-                                      child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white12,fontWeight: FontWeight.w600)),
+                                      child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white12,fontWeight: FontWeight.w600)),
                                       onTap: () {
                                         StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Rewards'));
                                         Navigator.push(context,MaterialPageRoute(builder: (context) => RewardsAndOffers()));
@@ -114,16 +154,16 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                           if (fadeDash == "Rewards") ...[
                             Row(
                               children:[
-                                Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 36),
+                                Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(36, context)),
                                     child: GestureDetector(
-                                      child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white70,fontWeight: FontWeight.w600)),
+                                      child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white70,fontWeight: FontWeight.w600)),
                                       onTap: () {
                                       },
                                     ),  
                                 ),
-                                Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 115),
+                                Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(115, context)),
                                     child: GestureDetector(
-                                      child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
+                                      child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w600)),
                                       onTap: () {
                                         StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Rewards'));
                                         Navigator.push(context,MaterialPageRoute(builder: (context) => RewardsAndOffers()));
@@ -138,10 +178,10 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                     ]
                   ),
                 )),
-                Padding(padding: EdgeInsets.only(top:21,left:20,right: 20,bottom:15),
+                Padding(padding: EdgeInsets.only(top:Responsive.height(21, context),left:Responsive.width(20, context),right: Responsive.width(20, context),bottom:Responsive.height(15, context)),
                 child: Container(
-                  width: 335,
-                  height: 160,
+                  width: Responsive.width(335, context),
+                  height: Responsive.height(160, context),
                   color: Color(0xff191B23),
                     child: Container(
                       decoration: BoxDecoration(color: Color(0xffF7F8FA),
@@ -152,26 +192,26 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                           Padding(padding: EdgeInsets.only(),
                             child: Column(
                               children: <Widget>[
-                              Padding(padding: EdgeInsets.only(top:31,left:37,bottom:35,right:22.44),
+                              Padding(padding: EdgeInsets.only(top:Responsive.height(31, context),left:Responsive.width(37, context),bottom:Responsive.height(35, context),right:Responsive.width(22.44, context)),
                                     child:Container(
-                                      width: 180,
-                                      height: 94,
+                                      width: Responsive.width(180, context),
+                                      height: Responsive.height(94, context),
                                       child:Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Padding(padding: EdgeInsets.only(),
-                                        child:Text('Looking for a loan',style: GoogleFonts.montserrat(fontSize:18,fontWeight:FontWeight.w600),)
+                                        child:Text('Looking for a loan',style: GoogleFonts.montserrat(fontSize:Responsive.height(18, context),fontWeight:FontWeight.w700),)
                                         ),
-                                        Padding(padding: EdgeInsets.only(bottom: 15),
-                                        child: Text('Easy & Afforfable',style:GoogleFonts.montserrat(fontSize:13,fontWeight:FontWeight.w300)),
+                                        Padding(padding: EdgeInsets.only(bottom: Responsive.width(15, context)),
+                                        child: Text('Easy & Afforfable',style:GoogleFonts.montserrat(fontSize:Responsive.height(13, context),fontWeight:FontWeight.w600,color: Color(0xff676C6D))),
                                         ),
                                         Padding(padding: EdgeInsets.only(),
                                         child:Container(
-                                          width: 130,
-                                          height: 38,
+                                          width: Responsive.width(130, context),
+                                          height: Responsive.height(38, context),
                                           child: RaisedButton(
                                             color: Color(0xff6478D3),
-                                              child:Text('Apply now',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w500)),
+                                              child:Text('Apply now',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w500)),
                                               onPressed: () => {
                                                 Navigator.of(context).pushReplacement(
                                                   MaterialPageRoute(
@@ -192,10 +232,10 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                               ],
                             ),
                           ),   
-                          Padding(padding: EdgeInsets.only(top:49.23,bottom:42.13,right:35.08),
+                          Padding(padding: EdgeInsets.only(top:Responsive.height(49, context),bottom:Responsive.height(42, context),right:Responsive.width(35, context)),
                           child:Container(
-                            width: 60.47,
-                            height: 68.64,
+                            width: Responsive.width(60, context),
+                            height: Responsive.height(69, context),
                             child: Image.asset('assets/images/001-save-money.png'),
                             ),
                           )
@@ -204,10 +244,10 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(left:21,right: 21,bottom:15),
+                Padding(padding: EdgeInsets.only(left:Responsive.width(21, context),right: Responsive.width(21, context),bottom:Responsive.height(15, context)),
                 child: Container(
-                  width: 333,
-                  height: 113,
+                  width: Responsive.width(333, context),
+                  height: Responsive.height(113, context),
                   color: Color(0xff191B23),
                     child: Container(
                       decoration: BoxDecoration(color: Color(0xff323C6A),
@@ -216,18 +256,18 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                       child:new Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          Padding(padding: EdgeInsets.only(top:27,bottom: 20.05,left: 36.05,right: 10),
+                          Padding(padding: EdgeInsets.only(top:Responsive.height(27, context),bottom: Responsive.height(20, context),left: Responsive.width(36, context),right: Responsive.width(10, context)),
                           child:Container(
-                            width: 250,
-                            height: 89,
+                            width: Responsive.width(230, context),
+                            height: Responsive.height(89, context),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children:<Widget>[
-                                Text('Hello, Smith',style: GoogleFonts.montserrat(fontSize:18,fontWeight:FontWeight.w600,color: Colors.white),),
-                                Padding(child: Text('Complete your profile',style: GoogleFonts.montserrat(fontSize:13,fontWeight:FontWeight.w300,color: Colors.white),),padding: EdgeInsets.only(bottom:13),),
+                                Text('Hello, Smith',style: GoogleFonts.montserrat(fontSize:Responsive.height(18, context),fontWeight:FontWeight.w700,color: Colors.white),),
+                                Padding(child: Text('Complete your profile',style: GoogleFonts.montserrat(fontSize:Responsive.height(13, context),fontWeight:FontWeight.w700,color: Color(0xffB5BABB)),),padding: EdgeInsets.only(bottom:13),),
                                 LinearPercentIndicator(
-                                  width: 200.0,
-                                  lineHeight: 7.0,
+                                  width: Responsive.width(200, context),
+                                  lineHeight: Responsive.height(7, context),
                                   percent: 0.5,
                                   backgroundColor: Colors.white,
                                   progressColor: Colors.blue,
@@ -236,7 +276,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                             ),
                           )
                           ),
-                          Padding(padding: EdgeInsets.only(top:39.5,bottom: 64.5,right: 10,left: 3),
+                          Padding(padding: EdgeInsets.only(top:Responsive.height(39.5, context),bottom: Responsive.height(64.5, context),right: Responsive.width(5, context),left: Responsive.width(3, context)),
                           child: Container(
                             child: IconButton(
                               icon: Icon(Icons.arrow_forward_ios,color: Color(0xff6478D3),),
@@ -251,8 +291,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                 ),
                 Padding(padding: EdgeInsets.only(left:21,right: 21,bottom:15),
                 child: Container(
-                  width: 335,
-                  height: 374,
+                  width: Responsive.width(335, context),
+                  height: Responsive.height(374, context),
                   color: Color(0xff191B23),
                     child: Container(
                       decoration: BoxDecoration(color: Color(0xff2D3233),
@@ -265,8 +305,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                         children: <Widget>[
                           Padding(padding: EdgeInsets.only(),
                           child:Column(children: <Widget>[
-                            Padding(padding:EdgeInsets.only(top:27),child:Text('Check your credit score',style: GoogleFonts.montserrat(fontSize:16,fontWeight:FontWeight.w600,color: Colors.white),)),
-                            Padding(child: Text('Get free credit report',style: GoogleFonts.montserrat(fontSize:12,fontWeight:FontWeight.w300,color: Colors.white),),padding: EdgeInsets.only(bottom:13),),
+                            Padding(padding:EdgeInsets.only(top:Responsive.height(27, context)),child:Text('Check your credit score',style: GoogleFonts.montserrat(fontSize:Responsive.height(16, context),fontWeight:FontWeight.w700,color: Colors.white),)),
+                            Padding(child: Text('Get free credit report',style: GoogleFonts.montserrat(fontSize:Responsive.height(12, context),fontWeight:FontWeight.w600,color: Color(0xffB5BABB)),),padding: EdgeInsets.only(bottom:Responsive.width(13, context)),),
                             CircularPercentIndicator(
                             radius: 180.0,
                             animation: true,

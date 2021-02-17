@@ -41,6 +41,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  carousel_slider: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -70,6 +71,8 @@ flutter:
     - assets/images/002-car.png
     - assets/images/003-book.png
     - assets/images/004-man.png
+    - assets/images/Group 15.png
+    - assets/images/Avatar Selected.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
