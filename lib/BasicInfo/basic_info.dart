@@ -4,6 +4,7 @@ import 'package:chickly/utils/responsive.dart';
 import 'package:chickly/widgets/rich_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
 class BasicInformation extends StatefulWidget {
@@ -55,9 +56,11 @@ class _BasicInformationState extends State<BasicInformation> {
                         showBottomSheets(context);
                         print('clicks');
                       },
-                      child: Image.asset(
-                        'assets/images/basicinfoicon.png',
-                        width: Responsive.width(80, context),
+                      child: CircleAvatar(
+                        radius: 50.0,
+                        backgroundImage: imageFile == null
+                            ? AssetImage('assets/images/basicinfoicon.png')
+                            : FileImage(imageFile),
                       ),
                     ),
                     SizedBox(
@@ -235,5 +238,46 @@ class _BasicInformationState extends State<BasicInformation> {
     );
   }
 
-  void showBottomSheets(context) {}
+  void showBottomSheets(context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return SafeArea(
+            child: Container(
+              child: new Wrap(
+                children: <Widget>[
+                  new ListTile(
+                      leading: new Icon(Icons.photo_library),
+                      title: new Text('Gallery'),
+                      onTap: () async {
+                        Navigator.pop(context);
+                        var image = await ImagePicker.pickImage(
+                            source: ImageSource.gallery);
+                        setState(() {
+                          imageFile = image;
+                        });
+                        // cropImage(image);
+                        // _imgFromGallery();
+                        // Navigator.of(context).pop();
+                      }),
+                  new ListTile(
+                    leading: new Icon(Icons.photo_camera),
+                    title: new Text('Camera'),
+                    onTap: () async {
+                      // _imgFromCamera();
+                      //  Navigator.of(context).pop();
+                      Navigator.pop(context);
+                      var image = await ImagePicker.pickImage(
+                          source: ImageSource.camera);
+                      setState(() {
+                        imageFile = image;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
 }
