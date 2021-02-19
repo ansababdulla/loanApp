@@ -6,10 +6,10 @@ class UpdateProfileLabel extends StatelessWidget {
   final String label;
   @override
   Widget build(BuildContext context) {
-    return Text('Full Name',
+    return Text(label,
         style: GoogleFonts.montserrat(
-          fontSize: 14,
-          color: Colors.black,
-        ));
+            fontSize: 14,
+            color: Color(0xFF676C6D),
+            fontWeight: FontWeight.w600));
   }
 }

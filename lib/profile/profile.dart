@@ -32,6 +32,8 @@ class _ProfileState extends State<Profile> {
               ),
             ),
             bottom: TabBar(
+              indicatorColor: Color(0xFF6478D3),
+              indicatorWeight: 2.0,
               tabs: [
                 Tab(
                   text: "Personal",
@@ -44,8 +46,8 @@ class _ProfileState extends State<Profile> {
           body: TabBarView(
             children: [
               PersonalProfile(),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
+              PersonalProfile(),
+              PersonalProfile(),
             ],
           ),
         ),
