@@ -7,12 +7,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
-class BasicInformation extends StatefulWidget {
+class BasicInformations extends StatefulWidget {
   @override
-  _BasicInformationState createState() => _BasicInformationState();
+  _BasicInformationsState createState() => _BasicInformationsState();
 }
 
-class _BasicInformationState extends State<BasicInformation> {
+class _BasicInformationsState extends State<BasicInformations> {
   bool checkboxValue = false;
   File imageFile;
 
@@ -96,6 +96,8 @@ class _BasicInformationState extends State<BasicInformation> {
                         ),
                         Form(
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
@@ -113,20 +115,14 @@ class _BasicInformationState extends State<BasicInformation> {
                                             color: Color(0xffE8E9EA)),
                                         borderRadius:
                                             BorderRadius.circular(28.0))),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        RichTextWidget('Mobile Number'),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Form(
-                          child: Column(
-                            children: [
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              RichTextWidget('Mobile Number'),
+                              SizedBox(
+                                height: 10.0,
+                              ),
                               TextFormField(
                                 decoration: InputDecoration(
                                     contentPadding: new EdgeInsets.symmetric(
@@ -143,20 +139,14 @@ class _BasicInformationState extends State<BasicInformation> {
                                             color: Color(0xffE8E9EA)),
                                         borderRadius:
                                             BorderRadius.circular(28.0))),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        RichTextWidget('Personal Email ID'),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Form(
-                          child: Column(
-                            children: [
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              RichTextWidget('Personal Email ID'),
+                              SizedBox(
+                                height: 10.0,
+                              ),
                               TextFormField(
                                 decoration: InputDecoration(
                                     contentPadding: new EdgeInsets.symmetric(
@@ -173,7 +163,7 @@ class _BasicInformationState extends State<BasicInformation> {
                                             color: Color(0xffE8E9EA)),
                                         borderRadius:
                                             BorderRadius.circular(28.0))),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -256,16 +246,11 @@ class _BasicInformationState extends State<BasicInformation> {
                         setState(() {
                           imageFile = image;
                         });
-                        // cropImage(image);
-                        // _imgFromGallery();
-                        // Navigator.of(context).pop();
                       }),
                   new ListTile(
                     leading: new Icon(Icons.photo_camera),
                     title: new Text('Camera'),
                     onTap: () async {
-                      // _imgFromCamera();
-                      //  Navigator.of(context).pop();
                       Navigator.pop(context);
                       var image = await ImagePicker.pickImage(
                           source: ImageSource.camera);
