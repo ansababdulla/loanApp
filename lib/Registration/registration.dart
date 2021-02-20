@@ -155,7 +155,10 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                 Padding(
                   padding: EdgeInsets.only(left:Responsive.width(124, context),right:Responsive.width(124, context),top: Responsive.height(50, context)),
                   child: GestureDetector(
-                    child: Text('TERMS & CONDITIONS',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Color(0xff6478D3),fontWeight: FontWeight.w500)),
+                    child: 
+                    Center(
+                      child: Text('TERMS & CONDITIONS',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Color(0xff6478D3),fontWeight: FontWeight.w500)),
+                    ),
                     onTap: () {
                     },
                   ),  
@@ -226,9 +229,9 @@ class _RegistrationPage2 extends State<RegistrationPage2> with TickerProviderSta
                           borderRadius: BorderRadius.all(Radius.circular(10.0))
                           ),
                           child: new Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children:<Widget>[
-                              Padding(padding: EdgeInsets.only(left: Responsive.width(40.77,context),right: Responsive.width(246.57, context),top: Responsive.height(31.85, context),bottom: Responsive.height(5.08, context)),
+                              Padding(padding: EdgeInsets.only(left: Responsive.width(24.77,context),right: Responsive.width(246.57, context),top: Responsive.height(31.85, context),bottom: Responsive.height(5.08, context)),
                               child: IconButton(
                                 icon: Icon(Icons.arrow_back_ios,color: Colors.black,size: Responsive.height(20, context),),
                                 onPressed: () => {
@@ -356,7 +359,7 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                               child: IconButton(
                                 icon: Icon(Icons.arrow_back_ios,color: Colors.black,size: Responsive.height(20, context),),
                                 onPressed: () => {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => OtpVerfication()))
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationPage2()))
                                 },
                               ),),
                               Padding(padding: EdgeInsets.only(right:Responsive.width(39, context),left: Responsive.width(40, context)),
@@ -451,13 +454,16 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                 )
               ),
                 Padding(
-                padding: EdgeInsets.only(left:Responsive.width(124, context),right:Responsive.width(123, context),top: Responsive.height(39, context)),
-                child: GestureDetector(
-                  child: Text('TERMS & CONDITIONS',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Color(0xff6478D3),fontWeight: FontWeight.w500)),
-                  onTap: () {
-                  },
-                ),  
-              )
+                  padding: EdgeInsets.only(left:Responsive.width(124, context),right:Responsive.width(124, context),top: Responsive.height(50, context)),
+                  child: GestureDetector(
+                    child: 
+                    Center(
+                      child: Text('TERMS & CONDITIONS',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Color(0xff6478D3),fontWeight: FontWeight.w500)),
+                    ),
+                    onTap: () {
+                    },
+                  ),  
+                )
             ]
           ),
         ),

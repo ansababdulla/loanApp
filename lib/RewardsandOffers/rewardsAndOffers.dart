@@ -66,7 +66,7 @@ class _RewardsAndOffers extends State<RewardsAndOffers> with TickerProviderState
                               children:[
                                 Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 36),
                                     child: GestureDetector(
-                                      child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white12,fontWeight: FontWeight.w600)),
+                                      child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Color(0xff8D92A3),fontWeight: FontWeight.w600)),
                                       onTap: () {
                                         StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Dashboard'));
                                         Navigator.push(context,MaterialPageRoute(builder: (context) => Dashboard()));

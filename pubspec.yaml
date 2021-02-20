@@ -30,6 +30,8 @@ dependencies:
   percent_indicator: ^2.1.9
   flutter_redux: ^0.7.0
   redux: ^4.0.0+3
+  timelines: ^0.0.2+1
+
 
 
 
@@ -73,6 +75,13 @@ flutter:
     - assets/images/004-man.png
     - assets/images/Group 15.png
     - assets/images/Avatar Selected.png
+    - assets/images/search.png
+    - assets/images/not_icon.png
+    - assets/images/chat_icon.png
+    - assets/images/003-home.png
+    - assets/images/005-layers.png
+    - assets/images/006-newspaper.png
+    - assets/images/004-money-bag.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
