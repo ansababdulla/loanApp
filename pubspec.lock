@@ -330,7 +330,6 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.2.19-nullsafety.6"
   timelines:
     dependency: "direct main"
@@ -339,9 +338,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.2+1"
-=======
     version: "0.2.19-nullsafety.2"
->>>>>>> 4686e0ef3824d17f8aa3ce71c61eb2a34c6d88be
   typed_data:
     dependency: transitive
     description:
