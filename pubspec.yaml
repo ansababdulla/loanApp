@@ -76,7 +76,6 @@ flutter:
     - assets/images/004-man.png
     - assets/images/Group 15.png
     - assets/images/Avatar Selected.png
-<<<<<<< HEAD
     - assets/images/search.png
     - assets/images/not_icon.png
     - assets/images/chat_icon.png
@@ -84,11 +83,9 @@ flutter:
     - assets/images/005-layers.png
     - assets/images/006-newspaper.png
     - assets/images/004-money-bag.png
-=======
     - assets/images/basicinfoicon.png
     - assets/images/roundedqnmark.png
     - assets/images/loan_successful_image.png
->>>>>>> 4686e0ef3824d17f8aa3ce71c61eb2a34c6d88be
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
