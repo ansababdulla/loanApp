@@ -1,9 +1,9 @@
 
+import 'package:chickly/Dashboard/dashboardTabs.dart';
 import 'package:chickly/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Registration/otp_verification.dart';
-import '../Dashboard/dashboard.dart';
 import '../utils/responsive.dart';
 
 class Registration extends StatefulWidget {
@@ -13,6 +13,7 @@ class Registration extends StatefulWidget {
 class _Registration extends State<Registration> with TickerProviderStateMixin {
   AnimationController controller;
   Animation<double> animation;
+  final _formKey = GlobalKey<FormState>();
 
   initState() {
   super.initState();
@@ -33,6 +34,18 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
     padding: EdgeInsets.only(left:91,right:90,top:78,bottom:28),
     child:Image.asset('assets/images/Chickly_logo_and_text.png'),
   );
+
+    void validateAndSave(){
+    final form = _formKey.currentState;
+    if(form.validate())
+    {
+      print ('Form is valid');
+    }
+    else
+    {
+      print('form is invalid');
+    }
+  }
 
 
   Widget build (BuildContext context) {
@@ -92,44 +105,65 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                                           style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsets.only(bottom:Responsive.height(40, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
-                                        child: Container(
-                                          width:Responsive.width(295, context),
-                                          height: Responsive.height(62, context),
-                                            child :TextField(
-                                              decoration: InputDecoration(
-                                                enabledBorder: const OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color:Colors.grey,width:0.1
-                                                  )
-                                                ),
-                                                hintText: 'Mobile number',
-                                                hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
-                                              ),
-                                            ),
-                                          )
-                                        ),
-                                        Center(
-                                          child:Container(
-                                          width: Responsive.width(235, context),
-                                          height: Responsive.height(46, context),
-                                          child: RaisedButton(
-                                            color: Color(0xff6478D3),
-                                              child:Text('Continue',style:GoogleFonts.montserrat(fontSize: Responsive.height(15, context),color: Colors.white,fontWeight: FontWeight.w500)),
-                                              onPressed: () => {
-                                                Navigator.of(context).pushReplacement(
-                                                  MaterialPageRoute(
-                                                    builder: (context) => OtpVerfication(),
-                                                  )
+                                      Form(
+                                        key: _formKey,
+                                        child:Column(
+                                          children:[
+                                            Padding(
+                                            padding: EdgeInsets.only(bottom:Responsive.height(40, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                            child: Container(
+                                              width:Responsive.width(295, context),
+                                              height: Responsive.height(62, context),
+                                                child : TextFormField(
+                                                  decoration: InputDecoration(
+                                                    enabledBorder: const OutlineInputBorder(
+                                                      borderSide: const BorderSide(
+                                                        color:Colors.grey,width:0.1
+                                                      )
+                                                    ),
+                                                    hintText: 'Mobile number',
+                                                    hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
+                                                  ),
+                                                  keyboardType: TextInputType.number,
+                                                  validator: (value) {
+                                                    if(value.isEmpty) {
+                                                      return 'please enter your mobile number';
+                                                    }
+                                                    else if (value.length < 10) {
+                                                      return 'please enter 10 digits';
+                                                    } else  {
+                                                      return null;
+                                                    }
+                                                  }
                                                 )
-                                              },
-                                              shape: new RoundedRectangleBorder(
-                                                borderRadius:new BorderRadius.circular(30.0)
+                                              )
+                                            ),
+                                            Center(
+                                              child:Container(
+                                              width: Responsive.width(235, context),
+                                              height: Responsive.height(46, context),
+                                              child: RaisedButton(
+                                                color: Color(0xff6478D3),
+                                                  child:Text('Continue',style:GoogleFonts.montserrat(fontSize: Responsive.height(15, context),color: Colors.white,fontWeight: FontWeight.w500)),
+                                                  onPressed: () => {
+                                                    if(_formKey.currentState.validate()) {
+                                                      _formKey.currentState.save(),
+                                                      Navigator.of(context).pushReplacement(
+                                                        MaterialPageRoute(
+                                                          builder: (context) => OtpVerfication(),
+                                                        )
+                                                      )
+                                                    }
+                                                  },
+                                                  shape: new RoundedRectangleBorder(
+                                                    borderRadius:new BorderRadius.circular(30.0)
+                                                  ),
+                                                ),
                                               ),
                                             ),
-                                        ),
-                                        ),
+                                          ]
+                                        )
+                                      ),
                                         Container(
                                           width:Responsive.width(295, context),
                                           height: Responsive.height(46, context),
@@ -183,6 +217,8 @@ class _RegistrationPage2 extends State<RegistrationPage2> with TickerProviderSta
 
   AnimationController controller;
   Animation<double> animation;
+  final _formKey = GlobalKey<FormState>();
+
 
   initState() {
   super.initState();
@@ -197,6 +233,8 @@ class _RegistrationPage2 extends State<RegistrationPage2> with TickerProviderSta
 
   controller.forward();
   }
+  
+
 
   final chicklyLogo = new Container(
     padding: EdgeInsets.only(left:91,right:90,top:78,bottom:28),
@@ -244,46 +282,61 @@ class _RegistrationPage2 extends State<RegistrationPage2> with TickerProviderSta
                               child:Text('Full Name',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w500),)),
                               Padding(padding:EdgeInsets.only(left:Responsive.width(40, context),right : Responsive.width(39, context),bottom: Responsive.height(15, context)),
                               child: Text('This is necessary to\ncontinue',style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))),),
-                              Padding(
-                              padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
-                              child: Container(
-                                width:Responsive.width(295, context),
-                                height: Responsive.height(62, context),
-                                  child:TextField(
-                                    decoration: InputDecoration(
-                                      enabledBorder: const OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color:Colors.grey,width:0.01
-                                        )
-                                      ),
-                                      hintText: ' Full name',
-                                      hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
-                                    ),
-                                  ),
-                                )
-                              ),
-                              Padding(
-                                padding:EdgeInsets.only(left:Responsive.width(30, context),right:Responsive.width(30, context)),
-                                child:                               Container(
-                                width: Responsive.width(235, context),
-                                height: Responsive.height(46, context),
-                                child: RaisedButton(
-                                  color: Color(0xff6478D3),
-                                    child:Text('Continue',style:GoogleFonts.montserrat(fontSize: Responsive.height(15, context),color: Colors.white,fontWeight: FontWeight.w500)),
-                                    onPressed: () => {
-                                      Navigator.of(context).pushReplacement(
-                                        MaterialPageRoute(
-                                          builder: (context) => RegistrationPage3(),
-                                        )
+                              Form(
+                                key: _formKey,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                    padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                    child: Container(
+                                      width:Responsive.width(295, context),
+                                      height: Responsive.height(62, context),
+                                        child:TextFormField(
+                                          decoration: InputDecoration(
+                                            enabledBorder: const OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color:Colors.grey,width:0.01
+                                              )
+                                            ),
+                                            hintText: ' Full name',
+                                            hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
+                                          ),
+                                          validator: (value) {
+                                            if(value.isEmpty) {
+                                              return 'please enter your name';
+                                            } else {
+                                              return null;
+                                            }
+                                          },
+                                        ),
                                       )
-                                    },
-                                    shape: new RoundedRectangleBorder(
-                                      borderRadius:new BorderRadius.circular(30.0)
                                     ),
-                                  ),
-                              ),
+                                    Padding(
+                                      padding:EdgeInsets.only(left:Responsive.width(30, context),right:Responsive.width(30, context)),
+                                        child:Container(
+                                        width: Responsive.width(235, context),
+                                        height: Responsive.height(46, context),
+                                        child: RaisedButton(
+                                          color: Color(0xff6478D3),
+                                            child:Text('Continue',style:GoogleFonts.montserrat(fontSize: Responsive.height(15, context),color: Colors.white,fontWeight: FontWeight.w500)),
+                                            onPressed: () => {
+                                              if(_formKey.currentState.validate()) {
+                                                Navigator.of(context).pushReplacement(
+                                                  MaterialPageRoute(
+                                                    builder: (context) => RegistrationPage3(),
+                                                  )
+                                                )
+                                              }
+                                            },
+                                            shape: new RoundedRectangleBorder(
+                                              borderRadius:new BorderRadius.circular(30.0)
+                                            ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
                               )
-
                             ]
                           ),
                         ),
@@ -310,7 +363,9 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
 
   AnimationController controller;
   Animation<double> animation;
-
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _dateController = TextEditingController();
+  DateTime selectedDate = DateTime.now();
   initState() {
   super.initState();
   controller = AnimationController(
@@ -323,6 +378,22 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
     ).animate(controller);
 
   controller.forward();
+  }
+
+
+  _selectDate(BuildContext context) async {
+  final DateTime picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2019, 8),
+      lastDate: DateTime(2100));
+  if (picked != null && picked != selectedDate)
+    setState(() {
+      selectedDate = picked;
+      var date =
+          "${picked.toLocal().day}/${picked.toLocal().month}/${picked.toLocal().year}";
+      _dateController.text = date;
+    });
   }
 
   final chicklyLogo = new Container(
@@ -368,83 +439,138 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                               child:Text('Basic Info',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w500),)),
                               Padding(padding:EdgeInsets.only(right: Responsive.width(39, context),bottom: Responsive.height(10, context),left:Responsive.width(40, context)),
                               child: Text('This is not mandatory to\ncontinue',style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))),),
-                              Padding(
-                              padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
-                              child:Container(
-                                width:Responsive.width(295, context),
-                                height:Responsive.height(62, context),
-                                child :TextField(
-                                  decoration: InputDecoration(
-                                    enabledBorder: const OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color:Colors.grey,width:0.01
-                                      )
+                              Form(
+                                key:_formKey,
+                                child: Column(
+                                  children:[
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                      child:Container(
+                                        width:Responsive.width(295, context),
+                                        height:Responsive.height(62, context),
+                                        child :TextFormField(
+                                          decoration: InputDecoration(
+                                            enabledBorder: const OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color:Colors.grey,width:0.01
+                                              )
+                                            ),
+                                            hintText: 'Enter your email ID',
+                                            hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
+                                          ),
+                                          validator: (value) {
+                                            if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value)){
+                                              return null;
+                                            } else {
+                                              return 'enter a valid email';
+                                            }
+                                          },
+                                        ),
+                                      ) 
                                     ),
-                                    hintText: 'Enter your email ID',
-                                    hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
-                                  ),
-                                ),
-                              ) 
-                              ),
-                              Padding(
-                              padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
-                              child: Container(
-                                width:Responsive.width(295, context),
-                                height:Responsive.height(62, context),
-                                child :                               TextField(
-                                  decoration: InputDecoration(
-                                    enabledBorder: const OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color:Colors.grey,width:0.01
-                                      )
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                      child: Container(
+                                        width:Responsive.width(295, context),
+                                        height:Responsive.height(62, context),
+                                        child :TextFormField(
+                                          decoration: InputDecoration(
+                                            enabledBorder: const OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color:Colors.grey,width:0.01
+                                              )
+                                            ),
+                                            hintText: 'your location',
+                                            hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
+                                          ),
+                                          validator: (value) {
+                                            if(value.isEmpty) {
+                                              return 'please enter your location';
+                                            } else {
+                                              return null;
+                                            }
+                                          },
+                                        ),
+                                      ) 
                                     ),
-                                    hintText: 'your location',
-                                    hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
-                                  ),
-                                ),
-                              ) 
-
-                              ),
-                              Padding(
-                              padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
-                              child: Container(
-                                width:Responsive.width(295, context),
-                                height:Responsive.height(62, context),
-                                child :                               TextField(
-                                  decoration: InputDecoration(
-                                    enabledBorder: const OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color:Colors.grey,width:0.01
-                                      )
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                        child: Container(
+                                          width:Responsive.width(295, context),
+                                          height:Responsive.height(62, context),
+                                          // child :TextFormField(
+                                          //   decoration: InputDecoration(
+                                          //     enabledBorder: const OutlineInputBorder(
+                                          //       borderSide: const BorderSide(
+                                          //         color:Colors.grey,width:0.01
+                                          //       )
+                                          //     ),
+                                          //     hintText: 'Date of birth',
+                                          //     hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
+                                          //   ),
+                                          //   validator: (value) {
+                                          //     if(value.isEmpty) {
+                                          //       return 'please enter your date of birth';
+                                          //     } else  {
+                                          //       return null;
+                                          //     }
+                                          //   },
+                                          // ),
+                                          child: GestureDetector(
+                                          onTap: () => _selectDate(context),
+                                          child: AbsorbPointer(
+                                            child: TextFormField(
+                                              onSaved: (val) {
+                                              },
+                                              controller: _dateController,
+                                              decoration: InputDecoration(
+                                                labelText: "Date of birth",
+                                                labelStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500)),
+                                                icon: Icon(Icons.calendar_today),
+                                                enabledBorder: const OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color:Colors.grey,width:0.01
+                                                )
+                                              ),
+                                              ),
+                                              validator: (value) {
+                                                if (value.isEmpty)
+                                                  return "Please select your DOB";
+                                                return null;
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      ) 
                                     ),
-                                    hintText: 'Date of birth',
-                                    hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
-                                  ),
-                                ),
-                              ) 
-
-                              ),
-                              Padding(padding: EdgeInsets.only(),
-                              child:Center(
-                                child:Container(
-                                width: Responsive.width(235, context),
-                                height: Responsive.height(46, context),
-                                child: RaisedButton(
-                                  color: Color(0xff6478D3),
-                                    child:Text('Continue',style:GoogleFonts.montserrat(fontSize: Responsive.height(15, context),color: Colors.white,fontWeight: FontWeight.w500)),
-                                    onPressed: () => {
-                                      Navigator.of(context).pushReplacement(
-                                        MaterialPageRoute(
-                                          builder: (context) => Dashboard(),
-                                        )
+                                    Padding(padding: EdgeInsets.only(),
+                                      child:Center(
+                                        child:Container(
+                                        width: Responsive.width(235, context),
+                                        height: Responsive.height(46, context),
+                                        child: RaisedButton(
+                                          color: Color(0xff6478D3),
+                                            child:Text('Continue',style:GoogleFonts.montserrat(fontSize: Responsive.height(15, context),color: Colors.white,fontWeight: FontWeight.w500)),
+                                            onPressed: () => {
+                                              if(_formKey.currentState.validate()) {
+                                                _formKey.currentState.save(),
+                                                Navigator.of(context).pushReplacement(
+                                                  MaterialPageRoute(
+                                                    builder: (context) => DashboardTabs(),
+                                                  )
+                                                )
+                                              }
+                                            },
+                                            shape: new RoundedRectangleBorder(
+                                              borderRadius:new BorderRadius.circular(30.0)
+                                            ),
+                                          ),
+                                        ),
                                       )
-                                    },
-                                    shape: new RoundedRectangleBorder(
-                                      borderRadius:new BorderRadius.circular(30.0)
-                                    ),
-                                  ),
+                                    )
+                                  ]
+                                )
                               ),
-                              ))
                             ]
                           ),
                         ),
@@ -453,17 +579,17 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                   ),
                 )
               ),
-                Padding(
-                  padding: EdgeInsets.only(left:Responsive.width(124, context),right:Responsive.width(124, context),top: Responsive.height(50, context)),
-                  child: GestureDetector(
-                    child: 
-                    Center(
-                      child: Text('TERMS & CONDITIONS',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Color(0xff6478D3),fontWeight: FontWeight.w500)),
-                    ),
-                    onTap: () {
-                    },
-                  ),  
-                )
+              Padding(
+                padding: EdgeInsets.only(left:Responsive.width(124, context),right:Responsive.width(124, context),top: Responsive.height(50, context)),
+                child: GestureDetector(
+                  child: 
+                  Center(
+                    child: Text('TERMS & CONDITIONS',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Color(0xff6478D3),fontWeight: FontWeight.w500)),
+                  ),
+                  onTap: () {
+                  },
+                ),  
+              )
             ]
           ),
         ),

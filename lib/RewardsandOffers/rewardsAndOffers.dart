@@ -46,70 +46,7 @@ class _RewardsAndOffers extends State<RewardsAndOffers> with TickerProviderState
             converter: (store) => store.state.fadeDash,
             builder: (context,String fadeDash) => ListView(
             children: [
-            Padding(padding: EdgeInsets.only(left: 20,right: 20),
-              child:Container(
-                width: 315,
-                height: 60,
-                color: Color(0xff191B23),
-                child: Column(
-                  children:[
-                    Column(
-                      children:[
-                        Row(
-                          children:[]
-                        )
-                      ]
-                    ),
-                    Column(
-                      children:[
-                            Row(
-                              children:[
-                                Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 36),
-                                    child: GestureDetector(
-                                      child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Color(0xff8D92A3),fontWeight: FontWeight.w600)),
-                                      onTap: () {
-                                        StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Dashboard'));
-                                        Navigator.push(context,MaterialPageRoute(builder: (context) => Dashboard()));
-                                      },
-                                    ),  
-                                ),
-                                Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 115),
-                                    child: GestureDetector(
-                                      child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
-                                      onTap: () {
-                                        StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Rewards'));
-                                        Navigator.push(context,MaterialPageRoute(builder: (context) => RewardsAndOffers()));
-                                      },
-                                    ),  
-                                ),
-                              ]
-                            )
-                        // Row(
-                        //   children:[
-                        //     Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 36),
-                        //         child: GestureDetector(
-                        //           child: Text('Dashboard',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
-                        //           onTap: () {
-                                    // Navigator.push(context,MaterialPageRoute(builder: (context) => Dashboard()));
-                        //           },
-                        //         ),  
-                        //     ),
-                        //     Padding(padding:EdgeInsets.only(top:28,bottom: 15,right: 115),
-                        //         child: GestureDetector(
-                        //           child: Text('Rewards & Offers',style:GoogleFonts.montserrat(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600)),
-                        //           onTap: () {
-                        //             StoreProvider.of<AppState>(context).dispatch(UpdateDrinkAction('Rewards'));
-                        //           },
-                        //         ),  
-                        //     ),
-                        //   ]
-                        // )
-                      ]
-                    )
-                  ]
-                ),
-              )),
-              Padding(padding:EdgeInsets.only(left: 20,right:20,top:23,bottom:20),
+              Padding(padding:EdgeInsets.only(left: 20,right:20,bottom:20),
               child: Container(
                 width:335,
                 height:151,
@@ -222,32 +159,6 @@ class _RewardsAndOffers extends State<RewardsAndOffers> with TickerProviderState
           ),
           ),
         ),
-        bottomNavigationBar: Container(                                        
-          decoration: BoxDecoration(                                                   
-            borderRadius: BorderRadius.all(                                           
-              Radius.circular(10.0)),
-          ),
-          child: ClipRRect(                                                            
-            borderRadius: BorderRadius.all(      
-              Radius.circular(30.0)                                                                               
-            ),
-            child: BottomNavigationBar(      
-              backgroundColor: Colors.amber, 
-              unselectedItemColor: Colors.grey,  
-              selectedItemColor: Colors.black87,
-              items: <BottomNavigationBarItem>[                                        
-                BottomNavigationBarItem(                                               
-                  icon: Icon(Icons.home),label: 'Home'),
-                BottomNavigationBarItem(                                               
-                  icon: Icon(Icons.attach_money),label: 'Home'),
-                BottomNavigationBarItem(                                               
-                  icon: Icon(Icons.library_books),label: 'Home'),
-                BottomNavigationBarItem(                                               
-                  icon: Icon(Icons.school),label: 'Home')
-              ],
-            ),
-          )
-        )
       )
     );
   }

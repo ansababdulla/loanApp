@@ -86,6 +86,8 @@ flutter:
     - assets/images/basicinfoicon.png
     - assets/images/roundedqnmark.png
     - assets/images/loan_successful_image.png
+    - assets/images/Group 83.png
+    - assets/images/surface1.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

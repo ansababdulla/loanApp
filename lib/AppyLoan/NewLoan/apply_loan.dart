@@ -1,10 +1,9 @@
-import 'package:chickly/Common/navbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../Dashboard/dashboard.dart';
 import '../../utils/responsive.dart';
+import '../../BasicInfo/basic_information.dart';
 
 class LoanType extends StatefulWidget {
   _LoanType createState () => _LoanType();
@@ -42,64 +41,6 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
           child: new ListView(
             children:<Widget>
             [
-            Padding(
-              padding: EdgeInsets.only(),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children:<Widget>[
-                      SizedBox(width:Responsive.width(15, context),height:Responsive.height(10, context)),
-                      Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(36, context)),
-                        child: GestureDetector(
-                          child: Text('New Loans',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w600)),
-                          onTap: () {
-                          },
-                        ),  
-                      ),
-                      SizedBox(width:Responsive.width(10, context),height:Responsive.height(10, context)),
-                      Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(36, context)),
-                          child: GestureDetector(
-                            child: Text('My Loans',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w600)),
-                            onTap: () {
-                            },
-                          ),  
-                      ),
-                      SizedBox(width:Responsive.width(10, context),height:Responsive.height(10, context)),
-                      Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(36, context)),
-                        child: GestureDetector(
-                          child: Text('Pre Approved',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w600)),
-                          onTap: () {
-                          },
-                        ),  
-                      ),
-                      SizedBox(width:Responsive.width(10, context),height:Responsive.height(10, context)),
-                      Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(36, context)),
-                        child: GestureDetector(
-                          child: Text('Reminders',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w600)),
-                          onTap: () {
-                          },
-                        ),  
-                      ),
-                      SizedBox(width:Responsive.width(10, context),height:Responsive.height(10, context)),
-                      Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(36, context)),
-                      child: GestureDetector(
-                        child: Text('Activities',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w600)),
-                        onTap: () {
-                        },
-                      ),  
-                    ),
-                      SizedBox(width:Responsive.width(10, context),height:Responsive.height(10, context)),
-                    Padding(padding:EdgeInsets.only(top:Responsive.height(28, context),bottom: Responsive.height(15, context),right: Responsive.width(36, context)),
-                      child: GestureDetector(
-                        child: Text('Favourite',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w600)),
-                        onTap: () {
-                        },
-                      ),  
-                    ),
-                  ]
-                ),
-              ),
-            ),
             SizedBox(width:Responsive.width(51, context),height: Responsive.height(51, context),),
             Padding(padding:EdgeInsets.only(left: Responsive.width(16, context),right: Responsive.width(16, context)),
               child: Container(
@@ -129,13 +70,21 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                       color: Color(0xff6478D3),
                                       shape: BoxShape.circle
                                     ),
-                                    child: Center(child:Image.asset('assets/images/001-home.png')),
+                                    child:Stack(
+                                      children: [
+                                        Center(child:Image.asset('assets/images/001-home.png')),
+                                        if(loanType == "home") 
+                                          Padding(
+                                            padding:EdgeInsets.only(left: Responsive.width(70, context)),
+                                            child:Image.asset('assets/images/Group 83.png',width: Responsive.width(31, context),height: Responsive.height(31, context),)
+                                          )
+                                      ],
+                                    ) 
                                   ),
                                   onTap: () {
                                     setState(() {
                                       loanType  = "home";
                                       loanButton = true;
-
                                     });
                                   },
                                 ),
@@ -159,7 +108,16 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                       color: Color(0xff6478D3),
                                       shape: BoxShape.circle
                                     ),
-                                    child: Center(child:Image.asset('assets/images/002-car.png')),
+                                    child:Stack(
+                                      children: [
+                                        Center(child:Image.asset('assets/images/002-car.png')),
+                                        if(loanType == "car") 
+                                          Padding(
+                                            padding:EdgeInsets.only(left: Responsive.width(70, context)),
+                                            child:Image.asset('assets/images/Group 83.png',width: Responsive.width(31, context),height: Responsive.height(31, context),)
+                                          )
+                                      ],
+                                    ) 
                                   ),
                                   onTap: () {
                                     setState(() {
@@ -192,7 +150,16 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                       color: Color(0xff6478D3),
                                       shape: BoxShape.circle
                                     ),
-                                    child: Center(child:Image.asset('assets/images/004-man.png')),
+                                    child:Stack(
+                                      children: [
+                                        Center(child:Image.asset('assets/images/004-man.png')),
+                                        if(loanType == "personal") 
+                                          Padding(
+                                            padding:EdgeInsets.only(left: Responsive.width(70, context)),
+                                            child:Image.asset('assets/images/Group 83.png',width: Responsive.width(31, context),height: Responsive.height(31, context),)
+                                          )
+                                      ],
+                                    ) 
                                   ),
                                   onTap: () {
                                     setState(() {
@@ -221,7 +188,16 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                       color: Color(0xff6478D3),
                                       shape: BoxShape.circle
                                     ),
-                                    child: Center(child:Image.asset('assets/images/003-book.png')),
+                                    child:Stack(
+                                      children: [
+                                        Center(child:Image.asset('assets/images/003-book.png')),
+                                        if(loanType == "education") 
+                                          Padding(
+                                            padding:EdgeInsets.only(left: Responsive.width(70, context)),
+                                            child:Image.asset('assets/images/Group 83.png',width: Responsive.width(31, context),height: Responsive.height(31, context),)
+                                          )
+                                      ],
+                                    ) 
                                   ),
                                   onTap: () {
                                     setState(() {
@@ -246,11 +222,13 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                         color: Color(0xff6478D3),
                           child:Text('Continue',style:GoogleFonts.montserrat(fontSize: Responsive.height(13, context),color: Colors.white,fontWeight: FontWeight.w500)),
                           onPressed: loanButton ? () => {
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                builder: (context) => LoanType(),
+                            if(loanType == "home") {
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => BasicInformations(),
+                                )
                               )
-                            )
+                            }
                           } : null,
                           shape: new RoundedRectangleBorder(
                             borderRadius:new BorderRadius.circular(30.0)
@@ -262,11 +240,11 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                   ]
                 ),
               ),
-              )
+              ),
+                          SizedBox(width:Responsive.width(51, context),height: Responsive.height(51, context),),
             ]
           ),
         ),
-        bottomNavigationBar: navBar(context),
       )
     );
   }

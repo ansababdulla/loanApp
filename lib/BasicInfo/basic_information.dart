@@ -1,11 +1,10 @@
 import 'dart:io';
-
-import 'package:chickly/utils/responsive.dart';
+import 'package:chickly/Upload%20Documents/upload_documents.dart';
 import 'package:chickly/widgets/rich_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import '../profile/profile.dart';
 
 class BasicInformations extends StatefulWidget {
   @override
@@ -213,7 +212,13 @@ class _BasicInformationsState extends State<BasicInformations> {
                                       fontSize: 10,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500)),
-                              onPressed: () => {},
+                              onPressed: () => {
+                                Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                    builder: (context) => UploadDocuments(),
+                                  )
+                                )
+                              },
                               shape: new RoundedRectangleBorder(
                                   borderRadius:
                                       new BorderRadius.circular(30.0)),
