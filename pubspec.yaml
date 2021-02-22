@@ -33,6 +33,7 @@ dependencies:
   timelines: ^0.0.2+1
   image_picker: ^0.6.7+7
   image_cropper: ^1.0.2
+  fa_stepper: ^0.0.2
 
 
 

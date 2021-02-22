@@ -1,10 +1,12 @@
 import 'dart:io';
-import 'package:chickly/Upload%20Documents/upload_documents.dart';
+
+import 'package:chickly/utils/appcolors.dart';
+import 'package:chickly/utils/responsive.dart';
 import 'package:chickly/widgets/rich_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import '../profile/profile.dart';
+import '../utils/appcolors.dart';
 
 class BasicInformations extends StatefulWidget {
   @override
@@ -193,7 +195,9 @@ class _BasicInformationsState extends State<BasicInformations> {
                             SizedBox(width: 5),
                             Text("Don’t Contact me yet",
                                 style: GoogleFonts.montserrat(
-                                    fontSize: 12, color: Colors.black)),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.textLabelGrey)),
                             SizedBox(width: 10),
                             Image.asset('assets/images/roundedqnmark.png')
                           ],
@@ -211,14 +215,8 @@ class _BasicInformationsState extends State<BasicInformations> {
                                   style: GoogleFonts.montserrat(
                                       fontSize: 10,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.w500)),
-                              onPressed: () => {
-                                Navigator.of(context).pushReplacement(
-                                  MaterialPageRoute(
-                                    builder: (context) => UploadDocuments(),
-                                  )
-                                )
-                              },
+                                      fontWeight: FontWeight.bold)),
+                              onPressed: () => {},
                               shape: new RoundedRectangleBorder(
                                   borderRadius:
                                       new BorderRadius.circular(30.0)),

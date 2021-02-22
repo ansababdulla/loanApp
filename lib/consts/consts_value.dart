@@ -24,20 +24,3 @@ var containerDecoration = BoxDecoration(
 
 var dropDownTextStyle = GoogleFonts.montserrat(
     fontSize: 14.0, color: Color(0xFF242A39), fontWeight: FontWeight.w600);
-
-// const textFormDecoration = InputDecoration(
-//
-//     border: InputBorder.none,
-//     fillColor: Colors.white,
-//     // focusedBorder: OutlineInputBorder(
-//     //     borderSide: BorderSide(color: Color(0xffE8E9EA)),
-//     //     borderRadius: BorderRadius.circular(28.0)),
-//     enabledBorder: OutlineInputBorder(
-//         // borderSide: BorderSide(color: Color(0xffE8E9EA)),
-//         borderRadius: BorderRadius.circular(28.0)));
-
-// enabledBorder: OutlineInputBorder(
-// borderSide: BorderSide(
-// color: Color(0xffE8E9EA)),
-// borderRadius:
-// BorderRadius.circular(28.0))
