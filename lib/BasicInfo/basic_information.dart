@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:chickly/Upload%20Documents/upload_documents.dart';
 import 'package:chickly/utils/appcolors.dart';
 import 'package:chickly/utils/responsive.dart';
 import 'package:chickly/widgets/rich_widget.dart';
@@ -216,7 +217,13 @@ class _BasicInformationsState extends State<BasicInformations> {
                                       fontSize: 10,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold)),
-                              onPressed: () => {},
+                              onPressed: () => {
+                                Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                    builder: (context) => UploadDocuments(),
+                                  )
+                                )
+                              },
                               shape: new RoundedRectangleBorder(
                                   borderRadius:
                                       new BorderRadius.circular(30.0)),

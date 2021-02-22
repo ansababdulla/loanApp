@@ -46,7 +46,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                 Padding(padding: EdgeInsets.only(top:Responsive.height(21, context),left:Responsive.width(20, context),right: Responsive.width(20, context),bottom:Responsive.height(15, context)),
                 child: Container(
                   width: Responsive.width(335, context),
-                  height: Responsive.height(160, context),
+                  height: Responsive.height(170, context),
                   decoration: BoxDecoration(color: Color(0xffF7F8FA),
                     borderRadius: BorderRadius.all(Radius.circular(10.0))
                   ),
@@ -58,7 +58,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                             Padding(padding: EdgeInsets.only(top:Responsive.height(31, context),left:Responsive.width(37, context),bottom:Responsive.height(25, context),right:Responsive.width(22.44, context)),
                               child:Container(
                                 width: Responsive.width(180, context),
-                                height: Responsive.height(100, context),
+                                height: Responsive.height(110, context),
                                 child:Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[

@@ -17,7 +17,7 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
   String adressProofValue = "Adhaar";
   File imageFile;
   final picker = ImagePicker();
-  String uploadStatus = "Upload your  Adhaar";
+  String uploadStatus = "Upload your Adhaar";
 
 
   initState() {
@@ -101,6 +101,10 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
                         if (uploadStatus == "Failed")
                          Text('Failed',
                           style:GoogleFonts.montserrat(color:Color(0xffEF4B5F),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                        )
+                        else 
+                          Text('Upload your Adhaar',
+                          style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
                         )
                       ]
                     ),
