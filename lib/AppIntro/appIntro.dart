@@ -98,6 +98,7 @@ void initState() {
             height: size.height * 0.69,
             child: basicSlider(context),
           ),
+          SizedBox(height:Responsive.height(30, context)),
           Row(
             children: [
               Padding(padding:EdgeInsets.only(left:size.width * 0.152,right:size.width * 0.152,top:size.height * 0.05),

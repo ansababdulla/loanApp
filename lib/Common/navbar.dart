@@ -7,14 +7,12 @@ import '../utils/responsive.dart';
       builder: (BuildContext context) {
         return  Theme(
           data: Theme.of(context).copyWith(
-              // sets the background color of the `BottomNavigationBar`
               canvasColor: Color(0xff000710),
-              // sets the active color of the `BottomNavigationBar` if `Brightness` is light
               primaryColor: Colors.white38,
               textTheme: Theme
                   .of(context)
                   .textTheme
-                  .copyWith(caption: new TextStyle(color: Colors.yellow))), // sets the inactive color of the `BottomNavigationBar`
+                  .copyWith(caption: new TextStyle(color: Colors.yellow))),
               child: Container(                                             
                 decoration: BoxDecoration(                                                   
                   borderRadius: BorderRadius.only(                                           

@@ -17,7 +17,8 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
   String adressProofValue = "Adhaar";
   File imageFile;
   final picker = ImagePicker();
-  String uploadStatus = "Upload your Adhaar";
+  String uploadStatus = "";
+  String documentType = "";
 
 
   initState() {
@@ -74,6 +75,7 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
                   }),
               ),
             ),
+
             Padding(padding: EdgeInsets.only(left:Responsive.width(40, context),right: Responsive.width(41, context),top: Responsive.height(21, context)),
               child: Container(
                 width:Responsive.width(294, context),
@@ -83,47 +85,64 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
                   children:[
                     SizedBox(width:Responsive.width(20, context)),
-                    Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
-                    SizedBox(width:Responsive.width(10.5, context)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
+                    Container(
+                      width:Responsive.width(170, context),
+                      height:Responsive.height(70, context),
+                        child:Row(
+                        children:[
+                          Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
+                          SizedBox(width:Responsive.width(10.5, context)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children:[
+                              Text('Adhaar',
+                                style:GoogleFonts.montserrat(color:Color(0xff2D3233),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
+                              ),
+                              if (uploadStatus == "Success" && documentType == "proof")
+                                Text('Success',
+                                  style:GoogleFonts.montserrat(color:Colors.green,fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)),
+                              if (uploadStatus == "Failed" && documentType == "proof")
+                              Text('Failed',
+                                style:GoogleFonts.montserrat(color:Color(0xffEF4B5F),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                              else 
+                                Text('Upload your Adhaar',
+                                style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                            ]
+                          ),
+                        ]
+                      ),
+                    ),
+                    SizedBox(width:Responsive.width(10, context)),
+                    Row(
                       children:[
-                        Text('Adhaar',
-                          style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
-                        ),
-                        if (uploadStatus == "Success")
-                          Text('Success',
-                            style:GoogleFonts.montserrat(color:Colors.green,fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)),
-                        if (uploadStatus == "Failed")
-                         Text('Failed',
-                          style:GoogleFonts.montserrat(color:Color(0xffEF4B5F),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
-                        )
-                        else 
-                          Text('Upload your Adhaar',
-                          style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                        Container(
+                          width: Responsive.width(75, context),
+                          height: Responsive.height(33, context),
+                          child: RaisedButton(
+                            child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
+                            color: Color(0xff6478D3),
+                            shape: new RoundedRectangleBorder(
+                                borderRadius:new BorderRadius.circular(30.0)
+                            ),
+                            onPressed:() {
+                              setState(() {
+                                documentType = "proof";
+                              });
+                              showBottomSheets(context);
+                            }
+                          ),
                         )
                       ]
                     ),
-                    SizedBox(width:Responsive.width(14, context)),
-                    Container(
-                      width: Responsive.width(75, context),
-                      height: Responsive.height(33, context),
-                      child: RaisedButton(
-                        child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
-                        color: Color(0xff6478D3),
-                        shape: new RoundedRectangleBorder(
-                            borderRadius:new BorderRadius.circular(30.0)
-                        ),
-                        onPressed:() {
-                          showBottomSheets(context);
-                        }
-                      ),
-                      
-                    )
+                    SizedBox(width:Responsive.width(10, context)),
                   ],
                 ),
               ),
@@ -142,38 +161,64 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
                   children:[
                     SizedBox(width:Responsive.width(20, context)),
-                    Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
-                    SizedBox(width:Responsive.width(10.5, context)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
+                    Container(
+                      width:Responsive.width(170, context),
+                      height:Responsive.height(70, context),
+                        child:Row(
+                        children:[
+                          Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
+                          SizedBox(width:Responsive.width(10.5, context)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children:[
+                              Text('Bank Statement',
+                                style:GoogleFonts.montserrat(color:Color(0xff2D3233),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
+                              ),
+                              if (uploadStatus == "Success" && documentType == "bank")
+                                Text('Success',
+                                  style:GoogleFonts.montserrat(color:Colors.green,fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)),
+                              if (uploadStatus == "Failed"&& documentType == "bank")
+                              Text('Failed',
+                                style:GoogleFonts.montserrat(color:Color(0xffEF4B5F),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                              else 
+                                Text('Latest 6 months',
+                                style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                            ]
+                          ),
+                        ]
+                      ),
+                    ),
+                    SizedBox(width:Responsive.width(10, context)),
+                    Row(
                       children:[
-                        Text('Bank Statement',
-                          style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
-                        ),
-                        Text('Latest 6 months',
-                          style:GoogleFonts.montserrat(color:Color(0xff8C9192),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                        Container(
+                          width: Responsive.width(75, context),
+                          height: Responsive.height(33, context),
+                          child: RaisedButton(
+                            child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
+                            color: Color(0xff6478D3),
+                            shape: new RoundedRectangleBorder(
+                                borderRadius:new BorderRadius.circular(30.0)
+                            ),
+                            onPressed:() {
+                              setState(() {
+                                documentType = "bank";
+                              });
+                              showBottomSheets(context);
+                            }
+                          ),
                         )
                       ]
                     ),
-                    SizedBox(width:Responsive.width(25, context)),
-                    Container(
-                      width: Responsive.width(75, context),
-                      height: Responsive.height(33, context),
-                      child: RaisedButton(
-                        child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
-                        color: Color(0xff6478D3),
-                        shape: new RoundedRectangleBorder(
-                            borderRadius:new BorderRadius.circular(30.0)
-                        ),
-                        onPressed:() {
-                          showBottomSheets(context);
-                        }
-                      ),
-                    )
+                    SizedBox(width:Responsive.width(10, context)),
                   ],
                 ),
               ),
@@ -192,38 +237,64 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
                   children:[
                     SizedBox(width:Responsive.width(20, context)),
-                    Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
-                    SizedBox(width:Responsive.width(10.5, context)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
+                    Container(
+                      width:Responsive.width(170, context),
+                      height:Responsive.height(70, context),
+                        child:Row(
+                        children:[
+                          Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
+                          SizedBox(width:Responsive.width(10.5, context)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children:[
+                              Text('Salary Slip',
+                                style:GoogleFonts.montserrat(color:Color(0xff2D3233),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
+                              ),
+                              if (uploadStatus == "Success"&& documentType == "salary")
+                                Text('Success',
+                                  style:GoogleFonts.montserrat(color:Colors.green,fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)),
+                              if (uploadStatus == "Failed"&& documentType == "salary")
+                              Text('Failed',
+                                style:GoogleFonts.montserrat(color:Color(0xffEF4B5F),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                              else 
+                                Text('Latest 3 months',
+                                style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                            ]
+                          ),
+                        ]
+                      ),
+                    ),
+                    SizedBox(width:Responsive.width(10, context)),
+                    Row(
                       children:[
-                        Text('Salary Slip',
-                          style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
-                        ),
-                        Text('Latest 3 months',
-                          style:GoogleFonts.montserrat(color:Color(0xff8C9192),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                        Container(
+                          width: Responsive.width(75, context),
+                          height: Responsive.height(33, context),
+                          child: RaisedButton(
+                            child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
+                            color: Color(0xff6478D3),
+                            shape: new RoundedRectangleBorder(
+                                borderRadius:new BorderRadius.circular(30.0)
+                            ),
+                            onPressed:() {
+                              setState(() {
+                                documentType = "salary";
+                              });
+                              showBottomSheets(context);
+                            }
+                          ),
                         )
                       ]
                     ),
-                    SizedBox(width:Responsive.width(45, context)),
-                    Container(
-                      width: Responsive.width(75, context),
-                      height: Responsive.height(33, context),
-                      child: RaisedButton(
-                        child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
-                        color: Color(0xff6478D3),
-                        shape: new RoundedRectangleBorder(
-                            borderRadius:new BorderRadius.circular(30.0)
-                        ),
-                        onPressed:() {
-                          showBottomSheets(context);
-                        }
-                      ),
-                    )
+                    SizedBox(width:Responsive.width(10, context)),
                   ],
                 ),
               ),
@@ -242,43 +313,69 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
                   children:[
                     SizedBox(width:Responsive.width(20, context)),
-                    Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
-                    SizedBox(width:Responsive.width(10.5, context)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
+                    Container(
+                      width:Responsive.width(170, context),
+                      height:Responsive.height(70, context),
+                        child:Row(
+                        children:[
+                          Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
+                          SizedBox(width:Responsive.width(10.5, context)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children:[
+                              Text('Income Proof',
+                                style:GoogleFonts.montserrat(color:Color(0xff2D3233),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
+                              ),
+                              if (uploadStatus == "Success"&& documentType == "income")
+                                Text('Success',
+                                  style:GoogleFonts.montserrat(color:Colors.green,fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)),
+                              if (uploadStatus == "Failed"&& documentType == "income")
+                              Text('Failed',
+                                style:GoogleFonts.montserrat(color:Color(0xffEF4B5F),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                              else 
+                                Text('Latest',
+                                style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                            ]
+                          ),
+                        ]
+                      ),
+                    ),
+                    SizedBox(width:Responsive.width(10, context)),
+                    Row(
                       children:[
-                        Text('Income Proof',
-                          style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
-                        ),
-                        Text('Latest',
-                          style:GoogleFonts.montserrat(color:Color(0xff8C9192),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                        Container(
+                          width: Responsive.width(75, context),
+                          height: Responsive.height(33, context),
+                          child: RaisedButton(
+                            child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
+                            color: Color(0xff6478D3),
+                            shape: new RoundedRectangleBorder(
+                                borderRadius:new BorderRadius.circular(30.0)
+                            ),
+                            onPressed:() {
+                              setState(() {
+                                documentType = "income";
+                              });
+                              showBottomSheets(context);
+                            }
+                          ),
                         )
                       ]
                     ),
-                    SizedBox(width:Responsive.width(45, context)),
-                    Container(
-                      width: Responsive.width(75, context),
-                      height: Responsive.height(33, context),
-                      child: RaisedButton(
-                        child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
-                        color: Color(0xff6478D3),
-                        shape: new RoundedRectangleBorder(
-                            borderRadius:new BorderRadius.circular(30.0)
-                        ),
-                        onPressed:() {
-                          showBottomSheets(context);
-                        }
-                      ),
-                    )
+                    SizedBox(width:Responsive.width(10, context)),
                   ],
                 ),
               ),
             ),
-                        Padding(padding: EdgeInsets.only(left:Responsive.width(40, context),right: Responsive.width(41, context),top: Responsive.height(21, context)),
+            Padding(padding: EdgeInsets.only(left:Responsive.width(40, context),right: Responsive.width(41, context),top: Responsive.height(21, context)),
             child: Text('Land Tax Receipt (LTR)',
               style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
               )
@@ -292,38 +389,64 @@ class _UploadDocuments extends State<UploadDocuments> with TickerProviderStateMi
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
                   children:[
                     SizedBox(width:Responsive.width(20, context)),
-                    Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
-                    SizedBox(width:Responsive.width(10.5, context)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
+                    Container(
+                      width:Responsive.width(170, context),
+                      height:Responsive.height(70, context),
+                        child:Row(
+                        children:[
+                          Image.asset('assets/images/surface1.png',width: Responsive.width(28.5, context),height: Responsive.height(35.97, context)),
+                          SizedBox(width:Responsive.width(10.5, context)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children:[
+                              Text('Land Tax Receipt',
+                                style:GoogleFonts.montserrat(color:Color(0xff2D3233),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
+                              ),
+                              if (uploadStatus == "Success" && documentType == "tax")
+                                Text('Success',
+                                  style:GoogleFonts.montserrat(color:Colors.green,fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)),
+                              if (uploadStatus == "Failed" && documentType == "tax")
+                              Text('Failed',
+                                style:GoogleFonts.montserrat(color:Color(0xffEF4B5F),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                              else 
+                                Text('Latest',
+                                style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                              )
+                            ]
+                          ),
+                        ]
+                      ),
+                    ),
+                    SizedBox(width:Responsive.width(10, context)),
+                    Row(
                       children:[
-                        Text('Land Tax Receipt',
-                          style:GoogleFonts.montserrat(color:Color(0xff676C6D),fontSize: Responsive.height(14, context),fontWeight: FontWeight.w600)
-                        ),
-                        Text('Latest',
-                          style:GoogleFonts.montserrat(color:Color(0xff8C9192),fontSize: Responsive.height(12, context),fontWeight: FontWeight.w600)
+                        Container(
+                          width: Responsive.width(75, context),
+                          height: Responsive.height(33, context),
+                          child: RaisedButton(
+                            child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
+                            color: Color(0xff6478D3),
+                            shape: new RoundedRectangleBorder(
+                                borderRadius:new BorderRadius.circular(30.0)
+                            ),
+                            onPressed:() {
+                              setState(() {
+                                documentType = "tax";
+                              });
+                              showBottomSheets(context);
+                            }
+                          ),
                         )
                       ]
                     ),
-                    SizedBox(width:Responsive.width(20, context)),
-                    Container(
-                      width: Responsive.width(75, context),
-                      height: Responsive.height(33, context),
-                      child: RaisedButton(
-                        child: Text('Upload',style:GoogleFonts.montserrat(fontSize: Responsive.height(11, context),color: Colors.white,fontWeight: FontWeight.w700)),
-                        color: Color(0xff6478D3),
-                        shape: new RoundedRectangleBorder(
-                            borderRadius:new BorderRadius.circular(30.0)
-                        ),
-                        onPressed:() {
-                          showBottomSheets(context);
-                        }
-                      ),
-                    )
+                    SizedBox(width:Responsive.width(10, context)),
                   ],
                 ),
               ),

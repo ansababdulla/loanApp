@@ -63,7 +63,7 @@ class _ApplyLoanTab extends State<ApplyLoanTab> with TickerProviderStateMixin {
             bottom: TabBar(
               isScrollable: true,
               indicatorColor: Color(0xFF6478D3),
-              indicatorWeight: 2.0,
+              indicatorWeight: 0.4,
               unselectedLabelColor: Color(0xff8D92A3),
               labelStyle: GoogleFonts.montserrat(fontSize:Responsive.height(13, context),color: Color(0xffF7F8F9),fontWeight:FontWeight.bold),
               tabs: [

@@ -71,7 +71,7 @@ class _DashboardTabs extends State<DashboardTabs> with TickerProviderStateMixin{
             ],
             bottom: TabBar(
               indicatorColor: Color(0xFF6478D3),
-              indicatorWeight: 2.0,
+              indicatorWeight: 0.4,
               unselectedLabelColor: Color(0xff8D92A3),
               isScrollable: true,
               indicatorSize: TabBarIndicatorSize.tab,

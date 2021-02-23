@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:chickly/redux/actions.dart';
 import 'package:chickly/redux/app_state.dart';
+import 'package:chickly/utils/responsive.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -84,7 +85,8 @@ class _RewardsAndOffers extends State<RewardsAndOffers> with TickerProviderState
                             child: Text('2,430',style: GoogleFonts.montserrat(fontSize:14,color:Colors.white70,fontWeight:FontWeight.w500)),),
                           ]
                         ),
-                        Padding(padding: EdgeInsets.only(left: 40.5,bottom: 89,top: 59,right: 30),
+                        SizedBox(width:Responsive.width(30, context)),
+                        Padding(padding: EdgeInsets.only(),
                         child: IconButton(icon: Icon(Icons.arrow_forward_ios), onPressed: () {},color: Colors.white70,iconSize: 18,),)
                       ]
                     )

@@ -150,7 +150,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                                 )
                               );
                             },
-                            iconSize: Responsive.height(28, context),
+                              iconSize: Responsive.height(24, context),
                             ),
                           )
                         )
@@ -174,9 +174,12 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Padding(padding: EdgeInsets.only(),
-                        child:Column(children: <Widget>[
+                        child:Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
                           Padding(padding:EdgeInsets.only(top:Responsive.height(27, context)),child:Text('Check your credit score',style: GoogleFonts.montserrat(fontSize:Responsive.height(16, context),fontWeight:FontWeight.w700,color: Colors.white),)),
-                          Padding(child: Text('Get free credit report',style: GoogleFonts.montserrat(fontSize:Responsive.height(12, context),fontWeight:FontWeight.w600,color: Color(0xffB5BABB)),),padding: EdgeInsets.only(bottom:Responsive.height(6.39, context)),),
+                          Padding(child: Text('Get free credit report',style: GoogleFonts.montserrat(fontSize:Responsive.height(12, context),fontWeight:FontWeight.w600,color: Color(0xffB5BABB)),),padding: EdgeInsets.only(bottom:Responsive.height(16.39, context)),),
                           CircularPercentIndicator(
                           radius: Responsive.width(170, context),
                           animation: true,
@@ -194,6 +197,14 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
                           circularStrokeCap: CircularStrokeCap.butt,
                           backgroundColor: Colors.white,
                           progressColor: Color(0xff6478D3),
+                        ),
+                        Padding(padding: EdgeInsets.only(left:Responsive.width(70, context),right: Responsive.width(30, context),top: Responsive.height(15, context)),
+                          child: Row(
+                            children:[
+                              Text('Score range from  ',style: GoogleFonts.montserrat(color: Color(0xffB5BABB),fontSize:Responsive.height(13, context),fontWeight: FontWeight.w400),),
+                              Text('300 - 900',style: GoogleFonts.montserrat(color: Colors.yellow[600],fontSize:Responsive.height(14, context),fontWeight: FontWeight.w700),),
+                            ]
+                          ),
                         ),
                         Padding(padding: EdgeInsets.only(top: Responsive.height(22, context)),
                         child:Container(

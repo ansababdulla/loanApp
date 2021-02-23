@@ -75,8 +75,8 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Container(
-                          height: size.height * 0.52,
-                          width: size.width * 0.79,
+                          height: Responsive.height(424, context),
+                          width: Responsive.width(295, context),
                           child: Container(
                           decoration:BoxDecoration(
                             color: Color(0xffFFFFFF),
@@ -90,17 +90,17 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                                       Padding(
                                         padding:EdgeInsets.only(left:size.width * 0.11,right: size.width * 0.10,top:size.height * 0.06),
                                         child: Text('Enter your',
-                                          style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff242A39),fontSize: size.height * 0.03 ,fontWeight: FontWeight.w500))
+                                          style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff242A39),fontSize: Responsive.height(26, context) ,fontWeight: FontWeight.w500))
                                         ),
                                       ),
                                       Padding(
                                         padding:EdgeInsets.only(left:size.width * 0.11,right: size.width * 0.10,bottom: size.height * 0.01),
                                         child: Text('mobile number',
-                                          style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff242A39),fontSize: size.height * 0.03 ,fontWeight: FontWeight.w700))
+                                          style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff242A39),fontSize: Responsive.height(26, context),fontWeight: FontWeight.w700))
                                         ),
                                       ),
                                       Padding(
-                                        padding:EdgeInsets.only(left:size.width * 0.11,right: 39,bottom: 22),
+                                        padding:EdgeInsets.only(left:size.width * 0.11,right: Responsive.width(29, context),bottom: Responsive.height(22, context)),
                                         child: Text('mobile number linked with\nbank is needed to apply',
                                           style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
                                         ),
@@ -110,27 +110,27 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                                         child:Column(
                                           children:[
                                             Padding(
-                                            padding: EdgeInsets.only(bottom:Responsive.height(40, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                            padding: EdgeInsets.only(bottom:Responsive.height(40, context),left: Responsive.width(42, context),right: Responsive.width(39, context)),
                                             child: Container(
                                               width:Responsive.width(295, context),
                                               height: Responsive.height(62, context),
                                                 child : TextFormField(
                                                   decoration: InputDecoration(
-                                                    enabledBorder: const OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:Colors.grey,width:0.1
-                                                      )
-                                                    ),
+                                                    border: InputBorder.none,
+                                                    focusedBorder: InputBorder.none,
+                                                    enabledBorder: InputBorder.none,
+                                                    errorBorder: InputBorder.none,
+                                                    disabledBorder: InputBorder.none,
                                                     hintText: 'Mobile number',
-                                                    hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
+                                                    hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
                                                   ),
                                                   keyboardType: TextInputType.number,
                                                   validator: (value) {
                                                     if(value.isEmpty) {
                                                       return 'please enter your mobile number';
                                                     }
-                                                    else if (value.length < 10) {
-                                                      return 'please enter 10 digits';
+                                                    else if (value.length < 10 || value.length > 10) {
+                                                      return 'please enter valid mobile number';
                                                     } else  {
                                                       return null;
                                                     }
@@ -277,9 +277,9 @@ class _RegistrationPage2 extends State<RegistrationPage2> with TickerProviderSta
                                 },
                               ),),
                               Padding(padding: EdgeInsets.only(right:Responsive.width(39, context),left:Responsive.width(40, context)),
-                              child:Text('Give us your',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w400),)),
+                              child:Text('Give us your',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w500),)),
                               Padding(padding: EdgeInsets.only(left:Responsive.width(40, context),right:Responsive.width(39, context),bottom: Responsive.height(8, context)),
-                              child:Text('Full Name',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w500),)),
+                              child:Text('Full Name',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w700),)),
                               Padding(padding:EdgeInsets.only(left:Responsive.width(40, context),right : Responsive.width(39, context),bottom: Responsive.height(15, context)),
                               child: Text('This is necessary to\ncontinue',style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))),),
                               Form(
@@ -293,13 +293,13 @@ class _RegistrationPage2 extends State<RegistrationPage2> with TickerProviderSta
                                       height: Responsive.height(62, context),
                                         child:TextFormField(
                                           decoration: InputDecoration(
-                                            enabledBorder: const OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                color:Colors.grey,width:0.01
-                                              )
-                                            ),
+                                            border: InputBorder.none,
+                                            focusedBorder: InputBorder.none,
+                                            enabledBorder: InputBorder.none,
+                                            errorBorder: InputBorder.none,
+                                            disabledBorder: InputBorder.none,
                                             hintText: ' Full name',
-                                            hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
+                                            hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
                                           ),
                                           validator: (value) {
                                             if(value.isEmpty) {
@@ -410,7 +410,10 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
           child: new ListView(
             shrinkWrap: true,
             children:<Widget>[
-              chicklyLogo,
+              new Container(
+                padding: EdgeInsets.only(left:Responsive.width(91, context),right:Responsive.width(90, context),top:Responsive.height(47, context),bottom:Responsive.height(21, context)),
+                child:Image.asset('assets/images/Chickly_logo_and_text.png'),
+              ),
               new Container(
                 child:Center(
                   child: Column(
@@ -434,9 +437,9 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                                 },
                               ),),
                               Padding(padding: EdgeInsets.only(right:Responsive.width(39, context),left: Responsive.width(40, context)),
-                              child:Text('Give us your',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w400),)),
+                              child:Text('Give us your',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w500),)),
                               Padding(padding: EdgeInsets.only(right:Responsive.width(39, context),bottom: Responsive.height(8, context),left: Responsive.width(40, context)),
-                              child:Text('Basic Info',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w500),)),
+                              child:Text('Basic Info',style: GoogleFonts.montserrat(fontSize:Responsive.height(26, context),color: Colors.black,fontWeight: FontWeight.w700),)),
                               Padding(padding:EdgeInsets.only(right: Responsive.width(39, context),bottom: Responsive.height(10, context),left:Responsive.width(40, context)),
                               child: Text('This is not mandatory to\ncontinue',style:GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff676C6D),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))),),
                               Form(
@@ -444,17 +447,17 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                                 child: Column(
                                   children:[
                                     Padding(
-                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(42, context),right: Responsive.width(39, context)),
                                       child:Container(
                                         width:Responsive.width(295, context),
                                         height:Responsive.height(62, context),
                                         child :TextFormField(
                                           decoration: InputDecoration(
-                                            enabledBorder: const OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                color:Colors.grey,width:0.01
-                                              )
-                                            ),
+                                            border: InputBorder.none,
+                                            focusedBorder: InputBorder.none,
+                                            enabledBorder: InputBorder.none,
+                                            errorBorder: InputBorder.none,
+                                            disabledBorder: InputBorder.none,
                                             hintText: 'Enter your email ID',
                                             hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
                                           ),
@@ -469,17 +472,17 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                                       ) 
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(42, context),right: Responsive.width(39, context)),
                                       child: Container(
                                         width:Responsive.width(295, context),
                                         height:Responsive.height(62, context),
                                         child :TextFormField(
                                           decoration: InputDecoration(
-                                            enabledBorder: const OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                color:Colors.grey,width:0.01
-                                              )
-                                            ),
+                                            border: InputBorder.none,
+                                            focusedBorder: InputBorder.none,
+                                            enabledBorder: InputBorder.none,
+                                            errorBorder: InputBorder.none,
+                                            disabledBorder: InputBorder.none,
                                             hintText: 'your location',
                                             hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
                                           ),
@@ -494,28 +497,10 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                                       ) 
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(40, context),right: Responsive.width(39, context)),
+                                      padding: EdgeInsets.only(bottom:Responsive.height(19, context),left: Responsive.width(42, context),right: Responsive.width(39, context)),
                                         child: Container(
                                           width:Responsive.width(295, context),
                                           height:Responsive.height(62, context),
-                                          // child :TextFormField(
-                                          //   decoration: InputDecoration(
-                                          //     enabledBorder: const OutlineInputBorder(
-                                          //       borderSide: const BorderSide(
-                                          //         color:Colors.grey,width:0.01
-                                          //       )
-                                          //     ),
-                                          //     hintText: 'Date of birth',
-                                          //     hintStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500))
-                                          //   ),
-                                          //   validator: (value) {
-                                          //     if(value.isEmpty) {
-                                          //       return 'please enter your date of birth';
-                                          //     } else  {
-                                          //       return null;
-                                          //     }
-                                          //   },
-                                          // ),
                                           child: GestureDetector(
                                           onTap: () => _selectDate(context),
                                           child: AbsorbPointer(
@@ -527,11 +512,11 @@ class _RegistrationPage3 extends State<RegistrationPage3> with TickerProviderSta
                                                 labelText: "Date of birth",
                                                 labelStyle: GoogleFonts.montserrat(textStyle:TextStyle(color: Color(0xff8D92A3),fontSize: Responsive.height(14, context) ,fontWeight: FontWeight.w500)),
                                                 icon: Icon(Icons.calendar_today),
-                                                enabledBorder: const OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                  color:Colors.grey,width:0.01
-                                                )
-                                              ),
+                                                border: InputBorder.none,
+                                                focusedBorder: InputBorder.none,
+                                                enabledBorder: InputBorder.none,
+                                                errorBorder: InputBorder.none,
+                                                disabledBorder: InputBorder.none,
                                               ),
                                               validator: (value) {
                                                 if (value.isEmpty)
