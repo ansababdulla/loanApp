@@ -24,3 +24,6 @@ var containerDecoration = BoxDecoration(
 
 var dropDownTextStyle = GoogleFonts.montserrat(
     fontSize: 14.0, color: Color(0xFF242A39), fontWeight: FontWeight.w600);
+
+var stepperTextStyle = GoogleFonts.montserrat(
+    fontWeight: FontWeight.bold, fontSize: 14.0, color: Color(0xFF242A39));

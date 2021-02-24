@@ -7,6 +7,8 @@ import 'package:flutter_redux/flutter_redux.dart';
 import './home/home.dart';
 import 'package:redux/redux.dart';
 import 'Dashboard/dashboardTabs.dart';
+import 'informations/information.dart';
+import 'informations/infromations.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
   );
   @override
   Widget build(BuildContext context) {
-    return StoreProvider(store: _store, child: MaterialApp(home: Home()));
+    return StoreProvider(
+        store: _store, child: MaterialApp(home: Information()));
   }
 }

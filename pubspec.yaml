@@ -35,6 +35,7 @@ dependencies:
   image_cropper: ^1.0.2
   fa_stepper: ^0.0.2
   pin_code_fields: ^6.1.0
+  step_progress_indicator: ^0.2.5+8
 
 
 
