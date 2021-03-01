@@ -1,19 +1,19 @@
 import 'package:chickly/consts/consts_value.dart';
+import 'package:chickly/informations/step3.dart';
 import 'package:chickly/utils/appcolors.dart';
 import 'package:chickly/utils/responsive.dart';
 import 'package:chickly/widgets/circle_widget.dart';
+import 'package:chickly/widgets/circle_withimage.dart';
 import 'package:chickly/widgets/line.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'step1.dart';
 
-class PersonalInfo extends StatefulWidget {
+class UploadDoc extends StatefulWidget {
   @override
-  _PersonalInfoState createState() => _PersonalInfoState();
+  _UploadDocState createState() => _UploadDocState();
 }
 
-class _PersonalInfoState extends State<PersonalInfo> {
+class _UploadDocState extends State<UploadDoc> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -21,11 +21,11 @@ class _PersonalInfoState extends State<PersonalInfo> {
       backgroundColor: AppColors.backgroundClr,
       appBar: AppBar(
         backgroundColor: Color(0xff191B23),
-        title: Text('Personal Information',
+        title: Text('Upload Documents',
             style: TextStyle(
                 fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w700,
                 fontSize: 14,
+                fontWeight: FontWeight.w700,
                 color: Color(0xff8D92A3))),
         leading: Transform.scale(
           scale: 0.5,
@@ -74,54 +74,55 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  CircleWidget(Color(0xFFF7B579), '1'),
-                                  Line(Color(0xFFF7B579)),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child:
-                                    Text('Personal', style: stepperTextStyle),
-                              ),
-                            ]),
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                CircleWithImge(Color(0xFF51DC8E)),
+                                Line(Color(0xFF51DC8E)),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Text('Personal', style: stepperTextStyle),
+                            ),
+                          ],
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Row(
                               children: [
-                                CircleWidget(Color(0xFF8C9192), '2'),
-                                Line(Color(0xFFE8E9EA)),
+                                CircleWithImge(Color(0xFF51DC8E)),
+                                Line(Color(0xFF51DC8E)),
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
+                              padding: EdgeInsets.only(top: 8.0),
                               child: Text('Work', style: stepperTextStyle),
                             ),
                           ],
                         ),
                         Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  CircleWidget(Color(0xFF8C9192), '3'),
-                                ],
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                CircleWidget(Color(0xFFF7B579), '3'),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Verify',
+                                style: stepperTextStyle,
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  'Verify',
-                                  style: stepperTextStyle,
-                                ),
-                              ),
-                            ]),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ],
@@ -129,7 +130,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
               ),
             ),
           ),
-          StepOnePersonal()
+          StepThreeVerify()
         ],
       ),
     ));

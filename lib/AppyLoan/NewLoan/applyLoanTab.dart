@@ -3,7 +3,6 @@ import 'package:chickly/Dashboard/dashboardTabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../utils/responsive.dart';
 import './apply_loan.dart';
 
@@ -60,7 +59,7 @@ class _ApplyLoanTab extends State<ApplyLoanTab> with TickerProviderStateMixin {
                   indicatorColor: Color(0xFF6478D3),
                   indicatorWeight: 0.4,
                   unselectedLabelColor: Color(0xff8D92A3),
-                  labelStyle: GoogleFonts.montserrat(
+                  labelStyle: TextStyle(
                       fontSize: Responsive.height(13, context),
                       color: Color(0xffF7F8F9),
                       fontWeight: FontWeight.bold),

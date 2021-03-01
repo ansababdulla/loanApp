@@ -8,8 +8,8 @@ class Line extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 0.0),
       child: Container(
-        height: 6.0,
-        width: 109.0,
+        height: 7.0,
+        width: 100.0,
         color: lineClr,
       ),
     );

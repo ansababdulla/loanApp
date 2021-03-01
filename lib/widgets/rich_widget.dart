@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../utils/appcolors.dart';
 
 class RichTextWidget extends StatelessWidget {
@@ -10,14 +9,19 @@ class RichTextWidget extends StatelessWidget {
     return RichText(
       text: TextSpan(
           text: label,
-          style: GoogleFonts.montserrat(
+          style: TextStyle(
+              fontFamily: 'Montserrat',
               fontSize: 14,
               color: AppColors.textLabelGrey,
               fontWeight: FontWeight.w600),
           children: [
             TextSpan(
               text: ' *',
-              style: TextStyle(color: AppColors.textLabelGrey, fontSize: 16.0),
+              style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  color: AppColors.textLabelGrey,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16.0),
             ),
           ]),
     );

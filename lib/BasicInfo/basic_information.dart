@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:chickly/Upload%20Documents/upload_documents.dart';
+import 'file:///E:/aaagit/chickly/chickly-app/lib/informations/step3.dart';
+import 'package:chickly/informations/personal_info.dart';
 import 'package:chickly/utils/appcolors.dart';
 import 'package:chickly/utils/responsive.dart';
 import 'package:chickly/widgets/rich_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import '../utils/appcolors.dart';
 
@@ -17,7 +17,7 @@ class BasicInformations extends StatefulWidget {
 class _BasicInformationsState extends State<BasicInformations> {
   bool checkboxValue = false;
   File imageFile;
-
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,10 +26,13 @@ class _BasicInformationsState extends State<BasicInformations> {
         appBar: AppBar(
           backgroundColor: Color(0xff191B23),
           title: Text('Basic Informations',
-              style: GoogleFonts.montserrat(
-                  fontSize: 14, color: Color(0xff8D92A3))),
+              style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                  color: Color(0xff8D92A3))),
           leading: Transform.scale(
-            scale: 0.5,
+            scale: 0.7,
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back_ios_outlined,
@@ -49,14 +52,13 @@ class _BasicInformationsState extends State<BasicInformations> {
           children: [
             Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(23.0),
                 // margin: EdgeInsets.only(bottom: 20),
                 child: Column(
                   children: [
                     GestureDetector(
                       onTap: () {
                         showBottomSheets(context);
-                        print('clicks');
                       },
                       child: CircleAvatar(
                         radius: 50.0,
@@ -69,18 +71,20 @@ class _BasicInformationsState extends State<BasicInformations> {
                       height: 10.0,
                     ),
                     Text('Your Picture',
-                        style: GoogleFonts.montserrat(
+                        style: TextStyle(
+                            fontFamily: 'Montserrat',
                             fontSize: 14,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600)),
+                            color: Color(0xFF676C6D),
+                            fontWeight: FontWeight.bold)),
                     SizedBox(
                       height: 8.0,
                     ),
                     Text('Tap here to take a photo or choose from library',
-                        style: GoogleFonts.montserrat(
-                            fontSize: 12,
+                        style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 13,
                             color: Color(0xff8C9192),
-                            fontWeight: FontWeight.normal)),
+                            fontWeight: FontWeight.w600)),
                   ],
                 )),
             Container(
@@ -88,7 +92,7 @@ class _BasicInformationsState extends State<BasicInformations> {
                 margin: EdgeInsets.only(top: 40.0),
                 // padding: EdgeInsets.all(25.0),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  padding: const EdgeInsets.only(left: 21, right: 16),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -97,26 +101,35 @@ class _BasicInformationsState extends State<BasicInformations> {
                           height: 10.0,
                         ),
                         Form(
+                          key: formKey,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
-                                    contentPadding: new EdgeInsets.symmetric(
-                                        vertical: 15.0, horizontal: 10.0),
-                                    border: InputBorder.none,
-                                    fillColor: Colors.white,
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xffE8E9EA)),
-                                        borderRadius:
-                                            BorderRadius.circular(28.0)),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xffE8E9EA)),
-                                        borderRadius:
-                                            BorderRadius.circular(28.0))),
+                                  contentPadding: new EdgeInsets.symmetric(
+                                      vertical: 15.0, horizontal: 10.0),
+                                  border: InputBorder.none,
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  focusedBorder: OutlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Color(0xffE8E9EA)),
+                                      borderRadius:
+                                          BorderRadius.circular(28.0)),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Color(0xffE8E9EA)),
+                                      borderRadius:
+                                          BorderRadius.circular(28.0)),
+                                ),
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return 'Please enter your name';
+                                  }
+                                  return null;
+                                },
                               ),
                               SizedBox(
                                 height: 10,
@@ -131,6 +144,7 @@ class _BasicInformationsState extends State<BasicInformations> {
                                         vertical: 15.0, horizontal: 10.0),
                                     border: InputBorder.none,
                                     fillColor: Colors.white,
+                                    filled: true,
                                     focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                             color: Color(0xffE8E9EA)),
@@ -155,6 +169,7 @@ class _BasicInformationsState extends State<BasicInformations> {
                                         vertical: 15.0, horizontal: 10.0),
                                     border: InputBorder.none,
                                     fillColor: Colors.white,
+                                    filled: true,
                                     focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                             color: Color(0xffE8E9EA)),
@@ -195,9 +210,10 @@ class _BasicInformationsState extends State<BasicInformations> {
                             ),
                             SizedBox(width: 5),
                             Text("Don’t Contact me yet",
-                                style: GoogleFonts.montserrat(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
+                                style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
                                     color: AppColors.textLabelGrey)),
                             SizedBox(width: 10),
                             Image.asset('assets/images/roundedqnmark.png')
@@ -213,16 +229,27 @@ class _BasicInformationsState extends State<BasicInformations> {
                             child: RaisedButton(
                               color: Color(0xff6478D3),
                               child: Text('Continue',
-                                  style: GoogleFonts.montserrat(
-                                      fontSize: 10,
+                                  style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 12,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold)),
                               onPressed: () => {
-                                Navigator.of(context).pushReplacement(
-                                  MaterialPageRoute(
-                                    builder: (context) => UploadDocuments(),
-                                  )
-                                )
+                                if (formKey.currentState.validate())
+                                  {
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                      builder: (context) => PersonalInfo(),
+                                    ))
+                                  }
+                                //     if (_formKey.currentState.validate()) {
+                                //       // If the form is valid, display a snackbar. In the real world,
+                                //       // you'd often call a server or save the information in a database.
+                                //
+                                //       Scaffold
+                                //       .of(context)
+                                //       .showSnackBar(SnackBar(content: Text('Processing Data')));
+                                // }
                               },
                               shape: new RoundedRectangleBorder(
                                   borderRadius:

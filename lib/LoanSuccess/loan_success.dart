@@ -1,6 +1,4 @@
-// import 'package:chickly/Dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../Dashboard/dashboard.dart';
 
 class LoanSuccess extends StatelessWidget {
@@ -52,19 +50,21 @@ class LoanSuccess extends StatelessWidget {
                                     bottom: 8.0),
                                 child: Center(
                                   child: Text('Congratulations!',
-                                      style: GoogleFonts.montserrat(
+                                      style: TextStyle(
+                                          fontFamily: 'Montserrat',
                                           fontSize: 22,
                                           color: Colors.black,
-                                          fontWeight: FontWeight.bold)),
+                                          fontWeight: FontWeight.w700)),
                                 ),
                               ),
                               Center(
                                 child: Text(
                                   'We are very Proud of you',
-                                  style: GoogleFonts.montserrat(
+                                  style: TextStyle(
+                                      fontFamily: 'Montserrat',
                                       fontSize: 14,
                                       color: Color(0xff8D92A3),
-                                      fontWeight: FontWeight.normal),
+                                      fontWeight: FontWeight.w500),
                                 ),
                               ),
                               SizedBox(
@@ -77,10 +77,11 @@ class LoanSuccess extends StatelessWidget {
                                   child: RaisedButton(
                                     color: Color(0xff6478D3),
                                     child: Text('Track Loan Status',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             fontSize: 10,
                                             color: Colors.white,
-                                            fontWeight: FontWeight.w500)),
+                                            fontWeight: FontWeight.w700)),
                                     onPressed: () => {},
                                     shape: new RoundedRectangleBorder(
                                         borderRadius:
@@ -101,10 +102,10 @@ class LoanSuccess extends StatelessWidget {
                                   },
                                   child: Text(
                                     'Go  home',
-                                    style: GoogleFonts.montserrat(
+                                    style: TextStyle(
                                         fontSize: 11,
                                         color: Color(0xff6478D3),
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.w700),
                                   ),
                                 ),
                               ),

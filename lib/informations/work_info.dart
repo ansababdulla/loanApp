@@ -1,8 +1,12 @@
+import 'package:chickly/consts/consts_value.dart';
+import 'package:chickly/informations/step2.dart';
+import 'package:chickly/utils/appcolors.dart';
+import 'package:chickly/utils/responsive.dart';
+import 'package:chickly/widgets/circle_widget.dart';
+import 'package:chickly/widgets/circle_withimage.dart';
+import 'package:chickly/widgets/line.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../utils/appcolors.dart';
-import '../widgets/label_updateprofile.dart';
-import '../consts/consts_value.dart';
 
 class WorkInfo extends StatefulWidget {
   @override
@@ -10,302 +14,122 @@ class WorkInfo extends StatefulWidget {
 }
 
 class _WorkInfoState extends State<WorkInfo> {
-  String dropDownOccupationValue = "Salaried";
-  List dropDownOccupationList = ["Salaried", "Business Owner"];
-  String dropDownGenderValue = "Male";
-  List dropDownGenderList = ["Male", "Female"];
-  String dropDownResidenceValue = "Owned Self / Spouse";
-  List dropDownResidenceList = ["Owned Self / Spouse", "Owned Self"];
-  String stateValue;
-  List dropDownStateList = ["Kerala", "Tamil Nadu", "Karnataka", "Goa"];
-  String dropDownCityValue;
-  List dropDownCityList = ["Kollam", "Pathanamthitta", "Trivandrum"];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.only(bottom: 20.0),
-          color: AppColors.backgroundClr,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 40.0, top: 16.0),
-                child: UpdateProfileLabel('Occupation Type'),
-              ),
-              Form(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 42.0, top: 12.0, right: 32.0),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(left: 16.0, right: 16.0),
-                          decoration: containerDecoration,
-                          child: DropdownButton(
-                              icon: Icon(Icons.keyboard_arrow_down_sharp),
-                              isExpanded: true,
-                              underline: SizedBox(),
-                              style: GoogleFonts.montserrat(
-                                fontSize: 14,
-                                color: Colors.black,
-                              ),
-                              value: dropDownOccupationValue,
-                              items: dropDownOccupationList.map((valueitem) {
-                                return DropdownMenuItem(
-                                    value: valueitem,
-                                    child: Text(valueitem,
-                                        style: dropDownTextStyle));
-                              }).toList(),
-                              onChanged: (newvalue) {
-                                setState(() {
-                                  dropDownOccupationValue = newvalue;
-                                });
-                              }),
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        UpdateProfileLabel('Employer Name'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        TextFormField(
-                          decoration: textFieldDecoration,
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        UpdateProfileLabel('Total Work Experience'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        TextFormField(
-                          decoration: textFieldDecoration,
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        UpdateProfileLabel('Work Email ID'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        TextFormField(
-                          decoration: textFieldDecoration,
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 16.0, right: 16.0),
-                          decoration: containerDecoration,
-                          child: DropdownButton(
-                              icon: Icon(Icons.keyboard_arrow_down_sharp),
-                              isExpanded: true,
-                              underline: SizedBox(),
-                              style: GoogleFonts.montserrat(
-                                fontSize: 14,
-                                color: Colors.black,
-                              ),
-                              value: dropDownGenderValue,
-                              items: dropDownGenderList.map((valueitem) {
-                                return DropdownMenuItem(
-                                    value: valueitem,
-                                    child: Text(valueitem,
-                                        style: dropDownTextStyle));
-                              }).toList(),
-                              onChanged: (newvalue) {
-                                setState(() {
-                                  dropDownGenderValue = newvalue;
-                                });
-                              }),
-                        ),
-                        UpdateProfileLabel('Gender'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 16.0, right: 16.0),
-                          decoration: containerDecoration,
-                          child: DropdownButton(
-                              icon: Icon(Icons.keyboard_arrow_down_sharp),
-                              isExpanded: true,
-                              underline: SizedBox(),
-                              style: GoogleFonts.montserrat(
-                                fontSize: 14,
-                                color: Colors.black,
-                              ),
-                              value: dropDownGenderValue,
-                              items: dropDownGenderList.map((valueitem) {
-                                return DropdownMenuItem(
-                                    value: valueitem,
-                                    child: Text(valueitem,
-                                        style: dropDownTextStyle));
-                              }).toList(),
-                              onChanged: (newvalue) {
-                                setState(() {
-                                  dropDownGenderValue = newvalue;
-                                });
-                              }),
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        UpdateProfileLabel('Residence Type'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 16.0, right: 16.0),
-                          decoration: containerDecoration,
-                          child: DropdownButton(
-                              icon: Icon(Icons.keyboard_arrow_down_sharp),
-                              isExpanded: true,
-                              underline: SizedBox(),
-                              style: GoogleFonts.montserrat(
-                                fontSize: 14,
-                                color: Colors.black,
-                              ),
-                              value: dropDownResidenceValue,
-                              items: dropDownResidenceList.map((valuesitem) {
-                                return DropdownMenuItem(
-                                  value: valuesitem,
-                                  child: Text(valuesitem,
-                                      style: dropDownTextStyle),
-                                );
-                              }).toList(),
-                              onChanged: (newvalues) {
-                                setState(() {
-                                  dropDownResidenceValue = newvalues;
-                                });
-                              }),
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        UpdateProfileLabel('State'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 16.0, right: 16.0),
-                          decoration: containerDecoration,
-                          child: DropdownButton(
-                              hint: Text('Select', style: dropDownTextStyle),
-                              icon: Icon(Icons.keyboard_arrow_down_sharp),
-                              isExpanded: true,
-                              underline: SizedBox(),
-                              style: GoogleFonts.montserrat(
-                                fontSize: 14,
-                                color: Colors.black,
-                              ),
-                              value: stateValue,
-                              items: dropDownStateList.map((valuesitem) {
-                                return DropdownMenuItem(
-                                  value: valuesitem,
-                                  child: Text(
-                                    valuesitem,
-                                    style: dropDownTextStyle,
-                                  ),
-                                );
-                              }).toList(),
-                              onChanged: (newvalues) {
-                                setState(() {
-                                  stateValue = newvalues;
-                                });
-                              }),
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        UpdateProfileLabel('City'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 16.0, right: 16.0),
-                          decoration: containerDecoration,
-                          child: DropdownButton(
-                              hint: Text('Select', style: dropDownTextStyle),
-                              icon: Icon(Icons.keyboard_arrow_down_sharp),
-                              isExpanded: true,
-                              underline: SizedBox(),
-                              style: GoogleFonts.montserrat(
-                                fontSize: 14,
-                                color: Colors.black,
-                              ),
-                              value: dropDownCityValue,
-                              items: dropDownCityList.map((valuesitem) {
-                                return DropdownMenuItem(
-                                  value: valuesitem,
-                                  child: Text(valuesitem,
-                                      style: dropDownTextStyle),
-                                );
-                              }).toList(),
-                              onChanged: (newvalues) {
-                                setState(() {
-                                  dropDownCityValue = newvalues;
-                                });
-                              }),
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        UpdateProfileLabel('Address'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        TextFormField(
-                          decoration: textFieldDecoration,
-                          maxLines: null,
-                          keyboardType: TextInputType.multiline,
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        UpdateProfileLabel('Pin Code'),
-                        SizedBox(
-                          height: 12.0,
-                        ),
-                        TextFormField(
-                          decoration: textFieldDecoration,
-                        ),
-                        SizedBox(
-                          height: 22.0,
-                        ),
-                        Center(
-                          child: ButtonTheme(
-                            minWidth: 130.0,
-                            height: 40.0,
-                            child: RaisedButton(
-                              color: Color(0xff6478D3),
-                              child: Text('Continue',
-                                  style: GoogleFonts.montserrat(
-                                      fontSize: 10,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold)),
-                              onPressed: () => {},
-                              shape: new RoundedRectangleBorder(
-                                  borderRadius:
-                                      new BorderRadius.circular(30.0)),
-                            ),
-                          ),
-                        ),
-                      ]),
-                ),
-              ),
-            ],
+    return SafeArea(
+        child: Scaffold(
+      backgroundColor: AppColors.backgroundClr,
+      appBar: AppBar(
+        backgroundColor: Color(0xff191B23),
+        title: Text('Work Information',
+            style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w700,
+                fontSize: 14,
+                color: Color(0xff8D92A3))),
+        leading: Transform.scale(
+          scale: 0.5,
+          child: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_outlined,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ),
       ),
-    );
+      body: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 0, bottom: 4),
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(color: Color(0xFF00000010)
+                    // .withOpacity(0.05),
+                    // spreadRadius: 1,
+                    // blurRadius: 1,
+                    // offset: Offset(0, 3),
+                    )
+                // BoxShadow(color: Color(0xFF00000010), blurRadius: 20.0),
+              ],
+            ),
+            child: Card(
+              color: Color(0xFFF7F8F9),
+              // shadowColor: Color(0xFF00000010),
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0.0),
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(
+                    top: 25.0,
+                    bottom: 25.0,
+                    left: Responsive.width(20, context),
+                    right: Responsive.width(20, context)),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                CircleWithImge(Color(0xFF51DC8E)),
+                                Line(Color(0xFF51DC8E)),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Text('Personal', style: stepperTextStyle),
+                            )
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                CircleWidget(Color(0xFFF7B579), '2'),
+                                Line(Color(0xFFF7B579)),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Text('Work', style: stepperTextStyle),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            CircleWidget(Color(0xFF8C9192), '3'),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Verify',
+                                style: stepperTextStyle,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          StepTwoWork()
+        ],
+      ),
+    ));
   }
 }

@@ -1,6 +1,6 @@
 import 'package:chickly/Dashboard/dashboardTabs.dart';
+import 'package:chickly/consts/consts_value.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../profile/profile_personal.dart';
 
 class Profile extends StatefulWidget {
@@ -15,12 +15,20 @@ class _ProfileState extends State<Profile> {
       child: DefaultTabController(
         length: 3,
         child: WillPopScope(
-          child:Scaffold(
+          child: Scaffold(
             appBar: AppBar(
               backgroundColor: Color(0xff191B23),
-              title: Text('Update Profile',
-                  style: GoogleFonts.montserrat(
-                      fontSize: 14, color: Color(0xff8D92A3))),
+              title: Text(
+                'Update Profile',
+                // style: GoogleFonts.montserrat(
+                //     fontSize: 14, color: Color(0xff8D92A3))
+
+                style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14,
+                    color: Color(0xff8D92A3),
+                    fontFamily: "Montserrat"),
+              ),
               leading: Transform.scale(
                 scale: 0.5,
                 child: IconButton(
@@ -29,12 +37,16 @@ class _ProfileState extends State<Profile> {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardTabs()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DashboardTabs()));
                   },
                 ),
               ),
               bottom: TabBar(
                 indicatorColor: Color(0xFF6478D3),
+                labelStyle: tabTextStyle,
                 indicatorWeight: 2.0,
                 tabs: [
                   Tab(
@@ -54,7 +66,7 @@ class _ProfileState extends State<Profile> {
             ),
           ),
           onWillPop: () async {
-            Navigator.pop(context,DashboardTabs());
+            Navigator.pop(context, DashboardTabs());
             return false;
           },
         ),

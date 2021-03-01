@@ -2,7 +2,6 @@ import 'package:chickly/AppyLoan/NewLoan/applyLoanTab.dart';
 import 'package:chickly/profile/profile.dart';
 import 'package:chickly/utils/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../redux/app_state.dart';
@@ -76,7 +75,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                           padding: EdgeInsets.only(),
                                           child: Text(
                                             'Looking for a loan',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 fontSize: Responsive.height(
                                                     18, context),
                                                 fontWeight: FontWeight.w700),
@@ -86,7 +86,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                             bottom:
                                                 Responsive.width(26, context)),
                                         child: Text('Easy & Afforfable',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 fontSize: Responsive.height(
                                                     13, context),
                                                 fontWeight: FontWeight.w600,
@@ -101,12 +102,13 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                           child: RaisedButton(
                                             color: Color(0xff6478D3),
                                             child: Text('Apply now',
-                                                style: GoogleFonts.montserrat(
+                                                style: TextStyle(
+                                                    fontFamily: 'Montserrat',
                                                     fontSize: Responsive.height(
                                                         13, context),
                                                     color: Colors.white,
                                                     fontWeight:
-                                                        FontWeight.w500)),
+                                                        FontWeight.w600)),
                                             onPressed: () => {
                                               Navigator.of(context)
                                                   .pushReplacement(
@@ -186,7 +188,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                       children: <Widget>[
                                         Text(
                                           'Hello, Smith',
-                                          style: GoogleFonts.montserrat(
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat',
                                               fontSize: Responsive.height(
                                                   18, context),
                                               fontWeight: FontWeight.w700,
@@ -195,7 +198,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         Padding(
                                           child: Text(
                                             'Complete your profile',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 fontSize: Responsive.height(
                                                     13, context),
                                                 fontWeight: FontWeight.w700,
@@ -279,7 +283,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                           top: Responsive.height(27, context)),
                                       child: Text(
                                         'Check your credit score',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
                                             fontSize:
                                                 Responsive.height(16, context),
                                             fontWeight: FontWeight.w700,
@@ -288,10 +292,11 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                   Padding(
                                     child: Text(
                                       'Get free credit report',
-                                      style: GoogleFonts.montserrat(
+                                      style: TextStyle(
+                                          fontFamily: 'Montserrat',
                                           fontSize:
                                               Responsive.height(12, context),
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w700,
                                           color: Color(0xffB5BABB)),
                                     ),
                                     padding: EdgeInsets.only(
@@ -312,14 +317,16 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                       children: [
                                         Text(
                                           '820',
-                                          style: GoogleFonts.montserrat(
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat',
                                               color: Colors.white,
                                               fontSize: Responsive.height(
                                                   22, context),
                                               fontWeight: FontWeight.w700),
                                         ),
                                         Text('Excellent',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 color: Color(0xffB5BABB),
                                                 fontSize: Responsive.height(
                                                     11, context),
@@ -338,7 +345,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                     child: Row(children: [
                                       Text(
                                         'Score range from  ',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             color: Color(0xffB5BABB),
                                             fontSize:
                                                 Responsive.height(13, context),
@@ -346,7 +354,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                       ),
                                       Text(
                                         '300 - 900',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             color: Colors.yellow[600],
                                             fontSize:
                                                 Responsive.height(14, context),
@@ -365,7 +374,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                             onPressed: () {},
                                             color: Color(0xff191B23),
                                             child: Text('View now',
-                                                style: GoogleFonts.montserrat(
+                                                style: TextStyle(
+                                                    fontFamily: 'Montserrat',
                                                     fontSize: Responsive.height(
                                                         11, context),
                                                     color: Colors.white,
@@ -413,11 +423,12 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                           right: Responsive.width(37, context)),
                                       child: Text(
                                         'Congratulations for your',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             fontSize:
                                                 Responsive.height(12, context),
                                             color: Color(0xffE8E9EA),
-                                            fontWeight: FontWeight.w400),
+                                            fontWeight: FontWeight.w600),
                                       ),
                                     ),
                                     Padding(
@@ -428,7 +439,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                               Responsive.height(25, context)),
                                       child: Text(
                                         'Pre-approved loan',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             fontSize:
                                                 Responsive.height(15, context),
                                             color: Colors.white,
@@ -459,7 +471,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                       right: Responsive.width(53, context)),
                                   child: Text(
                                     '125000',
-                                    style: GoogleFonts.montserrat(
+                                    style: TextStyle(
+                                        fontFamily: 'Montserrat',
                                         fontSize:
                                             Responsive.height(26, context),
                                         color: Colors.white,
@@ -472,11 +485,12 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         right: Responsive.width(54, context)),
                                     child: Text(
                                       '12% interest rate',
-                                      style: GoogleFonts.montserrat(
+                                      style: TextStyle(
+                                          fontFamily: 'Montserrat',
                                           fontSize:
                                               Responsive.height(12, context),
                                           color: Color(0xffF7F8F9),
-                                          fontWeight: FontWeight.w400),
+                                          fontWeight: FontWeight.w700),
                                     ))
                               ]),
                               Padding(
@@ -488,7 +502,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                   child: RaisedButton(
                                     color: Colors.white,
                                     child: Text('Apply now',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             fontSize:
                                                 Responsive.height(13, context),
                                             color: Colors.black,
@@ -543,7 +558,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                             top:
                                                 Responsive.height(22, context)),
                                         child: Text('Auto Loan',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 fontSize: Responsive.height(
                                                     16, context),
                                                 color: Colors.black,
@@ -558,7 +574,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                               bottom: Responsive.height(
                                                   38, context)),
                                           child: Text('State bank of india',
-                                              style: GoogleFonts.montserrat(
+                                              style: TextStyle(
+                                                  fontFamily: 'Montserrat',
                                                   fontSize: Responsive.height(
                                                       12, context),
                                                   color: Colors.black54,
@@ -576,7 +593,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                                   22, context)),
                                           child: Text(
                                             'Application ID',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 fontSize: Responsive.height(
                                                     12, context),
                                                 color: Color(0xff676C6D),
@@ -589,7 +607,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                               bottom: Responsive.height(
                                                   38, context)),
                                           child: Text('1234567',
-                                              style: GoogleFonts.montserrat(
+                                              style: TextStyle(
+                                                  fontFamily: 'Montserrat',
                                                   fontSize: Responsive.height(
                                                       12, context),
                                                   color: Color(0xff2D3233),
@@ -611,7 +630,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                               child: RaisedButton(
                                 color: Color(0xff6478D3),
                                 child: Text('View Details',
-                                    style: GoogleFonts.montserrat(
+                                    style: TextStyle(
                                         fontSize:
                                             Responsive.height(13, context),
                                         color: Colors.white,
@@ -666,7 +685,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                                 Responsive.width(26, context)),
                                         child: Text(
                                           'Auto loan',
-                                          style: GoogleFonts.montserrat(
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat',
                                               color: Color(0xff51DC8E),
                                               fontSize: Responsive.height(
                                                   16, context),
@@ -679,7 +699,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                             bottom:
                                                 Responsive.height(37, context)),
                                         child: Text('State bank of india',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 color: Color(0xff8C9192),
                                                 fontSize: Responsive.height(
                                                     12, context),
@@ -703,7 +724,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         ),
                                         child: Center(
                                             child: Text('Due on 15 Nov 2021',
-                                                style: GoogleFonts.montserrat(
+                                                style: TextStyle(
+                                                    fontFamily: 'Montserrat',
                                                     color: Color(0xff8C9192),
                                                     fontSize: Responsive.height(
                                                         12, context),
@@ -724,7 +746,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         bottom:
                                             Responsive.height(28.5, context)),
                                     child: Text('data',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             color: Color(0xff8C9192),
                                             fontSize:
                                                 Responsive.height(12, context),
@@ -740,11 +763,12 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         child: RaisedButton(
                                           color: Colors.white,
                                           child: Text('View Details',
-                                              style: GoogleFonts.montserrat(
+                                              style: TextStyle(
+                                                  fontFamily: 'Montserrat',
                                                   fontSize: Responsive.height(
                                                       13, context),
                                                   color: Colors.black,
-                                                  fontWeight: FontWeight.w500)),
+                                                  fontWeight: FontWeight.w700)),
                                           onPressed: () => {
                                             Navigator.of(context)
                                                 .pushReplacement(
@@ -780,7 +804,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                           Padding(
                                               padding: EdgeInsets.only(),
                                               child: Text('Paid',
-                                                  style: GoogleFonts.montserrat(
+                                                  style: TextStyle(
+                                                      fontFamily: 'Montserrat',
                                                       color: Color(0xff8D92A3),
                                                       fontSize:
                                                           Responsive.height(
@@ -791,7 +816,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         Padding(
                                             padding: EdgeInsets.only(),
                                             child: Text('3,55,000',
-                                                style: GoogleFonts.montserrat(
+                                                style: TextStyle(
+                                                    fontFamily: 'Montserrat',
                                                     color: Color(0xffF7F8F9),
                                                     fontSize: Responsive.height(
                                                         14, context),
@@ -815,7 +841,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                           Padding(
                                               padding: EdgeInsets.only(),
                                               child: Text('Balance',
-                                                  style: GoogleFonts.montserrat(
+                                                  style: TextStyle(
+                                                      fontFamily: 'Montserrat',
                                                       color: Color(0xff8D92A3),
                                                       fontSize:
                                                           Responsive.height(
@@ -826,7 +853,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         Padding(
                                             padding: EdgeInsets.only(),
                                             child: Text('3,55,000',
-                                                style: GoogleFonts.montserrat(
+                                                style: TextStyle(
+                                                    fontFamily: 'Montserrat',
                                                     color: Color(0xffF7F8F9),
                                                     fontSize: Responsive.height(
                                                         14, context),
@@ -850,7 +878,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                           Padding(
                                               padding: EdgeInsets.only(),
                                               child: Text('Interest',
-                                                  style: GoogleFonts.montserrat(
+                                                  style: TextStyle(
+                                                      fontFamily: 'Montserrat',
                                                       color: Color(0xff8D92A3),
                                                       fontSize:
                                                           Responsive.height(
@@ -861,7 +890,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         Padding(
                                             padding: EdgeInsets.only(),
                                             child: Text('3,55,000',
-                                                style: GoogleFonts.montserrat(
+                                                style: TextStyle(
+                                                    fontFamily: 'Montserrat',
                                                     color: Color(0xffF7F8F9),
                                                     fontSize: Responsive.height(
                                                         14, context),
@@ -912,7 +942,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                                 Responsive.width(60, context)),
                                         child: Text(
                                           'Auto Loan',
-                                          style: GoogleFonts.montserrat(
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat',
                                               fontSize: Responsive.height(
                                                   16, context),
                                               color: Colors.white,
@@ -927,7 +958,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                             bottom:
                                                 Responsive.height(34, context)),
                                         child: Text('State Bank of India',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 fontSize: Responsive.height(
                                                     12, context),
                                                 color: Color(0xffE8E9EA),
@@ -950,7 +982,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         ),
                                         child: Center(
                                             child: Text('7 Days Remaining',
-                                                style: GoogleFonts.montserrat(
+                                                style: TextStyle(
+                                                    fontFamily: 'Montserrat',
                                                     color: Color(0xffE8E9EA),
                                                     fontSize: Responsive.height(
                                                         11, context),
@@ -973,7 +1006,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                               right: Responsive.width(
                                                   65, context)),
                                           child: Text('11000',
-                                              style: GoogleFonts.montserrat(
+                                              style: TextStyle(
+                                                  fontFamily: 'Montserrat',
                                                   color: Colors.white,
                                                   fontSize: Responsive.height(
                                                       26, context),
@@ -986,7 +1020,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                               right: Responsive.width(
                                                   36, context)),
                                           child: Text('Due on 5 Nov 2021',
-                                              style: GoogleFonts.montserrat(
+                                              style: TextStyle(
+                                                  fontFamily: 'Montserrat',
                                                   color: Colors.white54,
                                                   fontSize: Responsive.height(
                                                       12, context),
@@ -1004,15 +1039,15 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                             color: Colors.white,
                                             child: Center(
                                                 child: Text('Pay Now',
-                                                    style:
-                                                        GoogleFonts.montserrat(
-                                                            color: Colors.black,
-                                                            fontSize: Responsive
-                                                                .height(13,
-                                                                    context),
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w700))),
+                                                    style: TextStyle(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color: Colors.black,
+                                                        fontSize:
+                                                            Responsive.height(
+                                                                13, context),
+                                                        fontWeight:
+                                                            FontWeight.w700))),
                                             onPressed: () => {
                                               Navigator.of(context)
                                                   .pushReplacement(
@@ -1066,7 +1101,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                                 Responsive.width(60, context)),
                                         child: Text(
                                           'Home Loan',
-                                          style: GoogleFonts.montserrat(
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat',
                                               fontSize: Responsive.height(
                                                   16, context),
                                               color: Colors.white,
@@ -1081,7 +1117,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                             bottom:
                                                 Responsive.height(34, context)),
                                         child: Text('State Bank of India',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
+                                                fontFamily: 'Montserrat',
                                                 fontSize: Responsive.height(
                                                     12, context),
                                                 color: Colors.white54,
@@ -1104,7 +1141,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         ),
                                         child: Center(
                                             child: Text('5 Days Remaining',
-                                                style: GoogleFonts.montserrat(
+                                                style: TextStyle(
+                                                    fontFamily: 'Montserrat',
                                                     color: Colors.white70,
                                                     fontSize: Responsive.height(
                                                         12, context),
@@ -1127,7 +1165,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                               right: Responsive.width(
                                                   65, context)),
                                           child: Text('24000',
-                                              style: GoogleFonts.montserrat(
+                                              style: TextStyle(
+                                                  fontFamily: 'Montserrat',
                                                   color: Colors.white,
                                                   fontSize: Responsive.height(
                                                       26, context),
@@ -1140,7 +1179,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                               right: Responsive.width(
                                                   36, context)),
                                           child: Text('Due on 15 Nov 2021',
-                                              style: GoogleFonts.montserrat(
+                                              style: TextStyle(
+                                                  fontFamily: 'Montserrat',
                                                   color: Colors.white54,
                                                   fontSize: Responsive.height(
                                                       12, context),
@@ -1158,15 +1198,13 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                             color: Colors.white,
                                             child: Center(
                                                 child: Text('Pay Now',
-                                                    style:
-                                                        GoogleFonts.montserrat(
-                                                            color: Colors.black,
-                                                            fontSize: Responsive
-                                                                .height(13,
-                                                                    context),
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w700))),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize:
+                                                            Responsive.height(
+                                                                13, context),
+                                                        fontWeight:
+                                                            FontWeight.w700))),
                                             onPressed: () => {
                                               Navigator.of(context)
                                                   .pushReplacement(
@@ -1218,7 +1256,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                         bottom: Responsive.height(7, context)),
                                     child: Text(
                                       'Link your\nloans',
-                                      style: GoogleFonts.montserrat(
+                                      style: TextStyle(
+                                          fontFamily: 'Montserrat',
                                           fontSize:
                                               Responsive.height(18, context),
                                           color: Colors.black,
@@ -1289,7 +1328,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                               Responsive.height(7, context)),
                                       child: Text(
                                           'Invite a friend,\nYou and your\nfriend win',
-                                          style: GoogleFonts.montserrat(
+                                          style: TextStyle(
+                                              fontFamily: 'Montserrat',
                                               fontSize: Responsive.height(
                                                   16, context),
                                               color: Colors.white70,
@@ -1298,7 +1338,8 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                     padding: EdgeInsets.only(
                                         left: 28, right: 17, bottom: 15),
                                     child: Text('1000 each',
-                                        style: GoogleFonts.montserrat(
+                                        style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             fontSize:
                                                 Responsive.height(26, context),
                                             color: Colors.white,

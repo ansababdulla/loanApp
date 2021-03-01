@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../widgets/label_updateprofile.dart';
 import '../consts/consts_value.dart';
 
@@ -82,10 +81,11 @@ class _PersonalProfileState extends State<PersonalProfile> {
                                 icon: Icon(Icons.keyboard_arrow_down_sharp),
                                 isExpanded: true,
                                 underline: SizedBox(),
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                ),
+                                style:TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 14,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600),
                                 value: dropDownGenderValue,
                                 items: dropDownGenderList.map((valueitem) {
                                   return DropdownMenuItem(
@@ -123,10 +123,11 @@ class _PersonalProfileState extends State<PersonalProfile> {
                                 icon: Icon(Icons.keyboard_arrow_down_sharp),
                                 isExpanded: true,
                                 underline: SizedBox(),
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                ),
+                                style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 14,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600),
                                 value: dropDownResidenceValue,
                                 items: dropDownResidenceList.map((valuesitem) {
                                   return DropdownMenuItem(
@@ -156,10 +157,11 @@ class _PersonalProfileState extends State<PersonalProfile> {
                                 icon: Icon(Icons.keyboard_arrow_down_sharp),
                                 isExpanded: true,
                                 underline: SizedBox(),
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                ),
+                                style:TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 14,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600),
                                 value: stateValue,
                                 items: dropDownStateList.map((valuesitem) {
                                   return DropdownMenuItem(
@@ -191,10 +193,11 @@ class _PersonalProfileState extends State<PersonalProfile> {
                                 icon: Icon(Icons.keyboard_arrow_down_sharp),
                                 isExpanded: true,
                                 underline: SizedBox(),
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                ),
+                                style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 14,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600),
                                 value: dropDownCityValue,
                                 items: dropDownCityList.map((valuesitem) {
                                   return DropdownMenuItem(

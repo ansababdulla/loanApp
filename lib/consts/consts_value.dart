@@ -1,5 +1,5 @@
+import 'package:chickly/utils/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 const bgndclr = Color(0xFFF7F8F9);
 
@@ -22,8 +22,20 @@ var containerDecoration = BoxDecoration(
     border: Border.all(color: Color(0xffE8E9EA)),
     borderRadius: BorderRadius.all(Radius.circular(30.0)));
 
-var dropDownTextStyle = GoogleFonts.montserrat(
-    fontSize: 14.0, color: Color(0xFF242A39), fontWeight: FontWeight.w600);
+var dropDownTextStyle = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 14.0,
+    color: Color(0xFF242A39),
+    fontWeight: FontWeight.w600);
 
-var stepperTextStyle = GoogleFonts.montserrat(
-    fontWeight: FontWeight.bold, fontSize: 14.0, color: Color(0xFF242A39));
+var stepperTextStyle = TextStyle(
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w700,
+    fontSize: 14.0,
+    color: Color(0xFF242A39));
+
+var tabTextStyle = TextStyle(
+  fontFamily: 'Montserrat',
+  fontWeight: FontWeight.w700,
+  fontSize: 14.0,
+);
