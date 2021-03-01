@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreProvider(
         store: _store,
-        child: MaterialApp(
-            debugShowCheckedModeBanner: false, home: BasicInformations()));
+        child: MaterialApp(debugShowCheckedModeBanner: false, home: Home()));
   }
 }
