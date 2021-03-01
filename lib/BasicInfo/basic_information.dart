@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'file:///E:/aaagit/chickly/chickly-app/lib/informations/step3.dart';
+import 'package:chickly/consts/consts_value.dart';
 import 'package:chickly/informations/personal_info.dart';
 import 'package:chickly/utils/appcolors.dart';
 import 'package:chickly/utils/responsive.dart';
+import 'package:chickly/utils/validations.dart';
 import 'package:chickly/widgets/rich_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -107,23 +109,7 @@ class _BasicInformationsState extends State<BasicInformations> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               TextFormField(
-                                decoration: InputDecoration(
-                                  contentPadding: new EdgeInsets.symmetric(
-                                      vertical: 15.0, horizontal: 10.0),
-                                  border: InputBorder.none,
-                                  fillColor: Colors.white,
-                                  filled: true,
-                                  focusedBorder: OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Color(0xffE8E9EA)),
-                                      borderRadius:
-                                          BorderRadius.circular(28.0)),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Color(0xffE8E9EA)),
-                                      borderRadius:
-                                          BorderRadius.circular(28.0)),
-                                ),
+                                decoration: basicInfoTextFieldStyle,
                                 validator: (value) {
                                   if (value.isEmpty) {
                                     return 'Please enter your name';
@@ -139,22 +125,9 @@ class _BasicInformationsState extends State<BasicInformations> {
                                 height: 10.0,
                               ),
                               TextFormField(
-                                decoration: InputDecoration(
-                                    contentPadding: new EdgeInsets.symmetric(
-                                        vertical: 15.0, horizontal: 10.0),
-                                    border: InputBorder.none,
-                                    fillColor: Colors.white,
-                                    filled: true,
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xffE8E9EA)),
-                                        borderRadius:
-                                            BorderRadius.circular(28.0)),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xffE8E9EA)),
-                                        borderRadius:
-                                            BorderRadius.circular(28.0))),
+                                keyboardType: TextInputType.number,
+                                decoration: basicInfoTextFieldStyle,
+                                validator: Validation.validatePhoneNumber,
                               ),
                               SizedBox(
                                 height: 10,
@@ -164,23 +137,9 @@ class _BasicInformationsState extends State<BasicInformations> {
                                 height: 10.0,
                               ),
                               TextFormField(
-                                decoration: InputDecoration(
-                                    contentPadding: new EdgeInsets.symmetric(
-                                        vertical: 15.0, horizontal: 10.0),
-                                    border: InputBorder.none,
-                                    fillColor: Colors.white,
-                                    filled: true,
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xffE8E9EA)),
-                                        borderRadius:
-                                            BorderRadius.circular(28.0)),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xffE8E9EA)),
-                                        borderRadius:
-                                            BorderRadius.circular(28.0))),
-                              ),
+                                  decoration: basicInfoTextFieldStyle,
+                                  keyboardType: TextInputType.emailAddress,
+                                  validator: Validation.validateEmailAddress),
                             ],
                           ),
                         ),
