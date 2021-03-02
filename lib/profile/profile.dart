@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
                 //     fontSize: 14, color: Color(0xff8D92A3))
 
                 style: TextStyle(
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                     fontSize: 14,
                     color: Color(0xff8D92A3),
                     fontFamily: "Montserrat"),

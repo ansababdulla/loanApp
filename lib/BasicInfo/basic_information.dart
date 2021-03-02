@@ -81,12 +81,16 @@ class _BasicInformationsState extends State<BasicInformations> {
                     SizedBox(
                       height: 8.0,
                     ),
-                    Text('Tap here to take a photo or choose from library',
-                        style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 13,
-                            color: Color(0xff8C9192),
-                            fontWeight: FontWeight.w600)),
+                    Center(
+                      child: Text(
+                          'Tap here to take a photo or choose from library',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 13,
+                              color: Color(0xff8C9192),
+                              fontWeight: FontWeight.w600)),
+                    ),
                   ],
                 )),
             Container(

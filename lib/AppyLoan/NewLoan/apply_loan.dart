@@ -61,7 +61,7 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                         style: TextStyle(
                             fontFamily: 'Montserrat',
                             fontSize: Responsive.height(24, context),
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
                     ),
@@ -115,7 +115,7 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                         fontFamily: 'Montserrat',
                                         fontSize:
                                             Responsive.height(14, context),
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w700,
                                         color: Colors.black))
                               ]),
                             )),
@@ -166,7 +166,7 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                         fontFamily: 'Montserrat',
                                         fontSize:
                                             Responsive.height(14, context),
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w700,
                                         color: Colors.black))
                               ]),
                             )),
@@ -222,7 +222,7 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                         fontFamily: 'Montserrat',
                                         fontSize:
                                             Responsive.height(14, context),
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w700,
                                         color: Colors.black))
                               ]),
                             )),
@@ -273,7 +273,7 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                         fontFamily: 'Montserrat',
                                         fontSize:
                                             Responsive.height(14, context),
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w700,
                                         color: Colors.black))
                               ]),
                             )),

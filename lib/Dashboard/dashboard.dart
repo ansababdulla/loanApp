@@ -79,7 +79,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                                 fontFamily: 'Montserrat',
                                                 fontSize: Responsive.height(
                                                     18, context),
-                                                fontWeight: FontWeight.w700),
+                                                fontWeight: FontWeight.bold),
                                           )),
                                       Padding(
                                         padding: EdgeInsets.only(
@@ -284,6 +284,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                       child: Text(
                                         'Check your credit score',
                                         style: TextStyle(
+                                            fontFamily: 'Montserrat',
                                             fontSize:
                                                 Responsive.height(16, context),
                                             fontWeight: FontWeight.w700,
