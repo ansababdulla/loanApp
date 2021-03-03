@@ -40,7 +40,7 @@ var tabTextStyle = TextStyle(
   fontSize: 14.0,
 );
 
-var basicInfoTextFieldStyle = InputDecoration(
+var formTextFieldStyle = InputDecoration(
   contentPadding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
   border: InputBorder.none,
   fillColor: Colors.white,

@@ -21,6 +21,7 @@ class _StepTwoWorkState extends State<StepTwoWork> {
   List dropDownStateList = ["Kerala", "Tamil Nadu", "Karnataka", "Goa"];
   String dropDownCityValue;
   List dropDownCityList = ["Kollam", "Pathanamthitta", "Trivandrum"];
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -37,6 +38,7 @@ class _StepTwoWorkState extends State<StepTwoWork> {
               child: UpdateProfileLabel('Occupation Type'),
             ),
             Form(
+              key: formKey,
               child: Padding(
                 padding:
                     const EdgeInsets.only(left: 42.0, top: 12.0, right: 32.0),
@@ -78,6 +80,12 @@ class _StepTwoWorkState extends State<StepTwoWork> {
                       ),
                       TextFormField(
                         decoration: textFieldDecoration,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Enter your name';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 14.0,
@@ -88,6 +96,12 @@ class _StepTwoWorkState extends State<StepTwoWork> {
                       ),
                       TextFormField(
                         decoration: textFieldDecoration,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Enter your name';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 14.0,
@@ -98,6 +112,12 @@ class _StepTwoWorkState extends State<StepTwoWork> {
                       ),
                       TextFormField(
                         decoration: textFieldDecoration,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Enter your email id';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 14.0,
@@ -249,6 +269,12 @@ class _StepTwoWorkState extends State<StepTwoWork> {
                         decoration: textFieldDecoration,
                         maxLines: null,
                         keyboardType: TextInputType.multiline,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Enter your address';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 14.0,
@@ -259,6 +285,13 @@ class _StepTwoWorkState extends State<StepTwoWork> {
                       ),
                       TextFormField(
                         decoration: textFieldDecoration,
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Enter your pincode';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 22.0,
@@ -276,10 +309,13 @@ class _StepTwoWorkState extends State<StepTwoWork> {
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700)),
                             onPressed: () => {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => UploadDoc()))
+                              if (formKey.currentState.validate())
+                                {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => UploadDoc()))
+                                }
                             },
                             shape: new RoundedRectangleBorder(
                                 borderRadius: new BorderRadius.circular(30.0)),

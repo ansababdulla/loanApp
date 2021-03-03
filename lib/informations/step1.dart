@@ -19,6 +19,9 @@ class _StepOnePersonalState extends State<StepOnePersonal> {
   List dropDownStateList = ["Kerala", "Tamil Nadu", "Karnataka", "Goa"];
   String dropDownCityValue;
   List dropDownCityList = ["Kollam", "Pathanamthitta", "Trivandrum"];
+  DateTime selectedDate = DateTime.now();
+  TextEditingController _dateController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -35,14 +38,25 @@ class _StepOnePersonalState extends State<StepOnePersonal> {
               child: UpdateProfileLabel('Date Of Birth'),
             ),
             Form(
+              key: formKey,
               child: Padding(
                 padding:
                     const EdgeInsets.only(left: 42.0, top: 12.0, right: 32.0),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TextFormField(
-                        decoration: textFieldDecoration,
+                      GestureDetector(
+                        onTap: () => _selectDate(context),
+                        child: AbsorbPointer(
+                          child: TextFormField(
+                              decoration: formTextFieldStyle,
+                              controller: _dateController,
+                              validator: (value) {
+                                if (value.isEmpty)
+                                  return "Please select your DOB";
+                                return null;
+                              }),
+                        ),
                       ),
                       SizedBox(
                         height: 14.0,
@@ -85,7 +99,13 @@ class _StepOnePersonalState extends State<StepOnePersonal> {
                         height: 12.0,
                       ),
                       TextFormField(
-                        decoration: textFieldDecoration,
+                        decoration: formTextFieldStyle,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter Pan No.';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 14.0,
@@ -203,6 +223,12 @@ class _StepOnePersonalState extends State<StepOnePersonal> {
                         decoration: textFieldDecoration,
                         maxLines: null,
                         keyboardType: TextInputType.multiline,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter your address';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 14.0,
@@ -213,6 +239,13 @@ class _StepOnePersonalState extends State<StepOnePersonal> {
                       ),
                       TextFormField(
                         decoration: textFieldDecoration,
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter your pincode';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 22.0,
@@ -230,10 +263,13 @@ class _StepOnePersonalState extends State<StepOnePersonal> {
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600)),
                             onPressed: () => {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => WorkInfo()))
+                              if (formKey.currentState.validate())
+                                {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => WorkInfo()))
+                                }
                             },
                             shape: new RoundedRectangleBorder(
                                 borderRadius: new BorderRadius.circular(30.0)),
@@ -247,5 +283,20 @@ class _StepOnePersonalState extends State<StepOnePersonal> {
         ),
       ),
     );
+  }
+
+  _selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2019, 8),
+        lastDate: DateTime(2100));
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+        var date =
+            "${picked.toLocal().day}/${picked.toLocal().month}/${picked.toLocal().year}";
+        _dateController.text = date;
+      });
   }
 }

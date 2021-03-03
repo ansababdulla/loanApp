@@ -113,7 +113,7 @@ class _BasicInformationsState extends State<BasicInformations> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               TextFormField(
-                                decoration: basicInfoTextFieldStyle,
+                                decoration: formTextFieldStyle,
                                 validator: (value) {
                                   if (value.isEmpty) {
                                     return 'Please enter your name';
@@ -130,7 +130,7 @@ class _BasicInformationsState extends State<BasicInformations> {
                               ),
                               TextFormField(
                                 keyboardType: TextInputType.number,
-                                decoration: basicInfoTextFieldStyle,
+                                decoration: formTextFieldStyle,
                                 validator: Validation.validatePhoneNumber,
                               ),
                               SizedBox(
@@ -141,7 +141,7 @@ class _BasicInformationsState extends State<BasicInformations> {
                                 height: 10.0,
                               ),
                               TextFormField(
-                                  decoration: basicInfoTextFieldStyle,
+                                  decoration: formTextFieldStyle,
                                   keyboardType: TextInputType.emailAddress,
                                   validator: Validation.validateEmailAddress),
                             ],
