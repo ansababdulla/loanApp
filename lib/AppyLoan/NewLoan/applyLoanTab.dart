@@ -60,6 +60,7 @@ class _ApplyLoanTab extends State<ApplyLoanTab> with TickerProviderStateMixin {
                   indicatorWeight: 0.4,
                   unselectedLabelColor: Color(0xff8D92A3),
                   labelStyle: TextStyle(
+                      fontFamily: 'Montserrat',
                       fontSize: Responsive.height(13, context),
                       color: Color(0xffF7F8F9),
                       fontWeight: FontWeight.bold),

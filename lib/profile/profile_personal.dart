@@ -16,17 +16,30 @@ class _PersonalProfileState extends State<PersonalProfile> {
   List dropDownStateList = ["Kerala", "Tamil Nadu", "Karnataka", "Goa"];
   String dropDownCityValue;
   List dropDownCityList = ["Kollam", "Pathanamthitta", "Trivandrum"];
+  final formKey = GlobalKey<FormState>();
+  DateTime selectedDate = DateTime.now();
+
+  TextEditingController _dateController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (formKey.currentState.validate()) {
+            return 'Saved';
+            // Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (context) => WorkInfo()))
+          }
+        },
         child: const Icon(Icons.check),
         backgroundColor: Color(0xFF6478D3),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: bgndclr,
       body: Padding(
-        padding: const EdgeInsets.only(bottom: 16.0),
+        padding: const EdgeInsets.only(bottom: 80.0),
         child: SingleChildScrollView(
           child: Container(
             color: bgndclr,
@@ -38,6 +51,7 @@ class _PersonalProfileState extends State<PersonalProfile> {
                   child: UpdateProfileLabel('First Name'),
                 ),
                 Form(
+                  key: formKey,
                   child: Padding(
                     padding: const EdgeInsets.only(
                         left: 42.0, top: 12.0, right: 32.0),
@@ -45,7 +59,13 @@ class _PersonalProfileState extends State<PersonalProfile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextFormField(
-                            decoration: textFieldDecoration,
+                            decoration: formTextFieldStyle,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Enter your First Name';
+                              }
+                              return null;
+                            },
                           ),
                           SizedBox(
                             height: 14.0,
@@ -55,7 +75,13 @@ class _PersonalProfileState extends State<PersonalProfile> {
                             height: 12.0,
                           ),
                           TextFormField(
-                            decoration: textFieldDecoration,
+                            decoration: formTextFieldStyle,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Enter your Last Name';
+                              }
+                              return null;
+                            },
                           ),
                           SizedBox(
                             height: 14.0,
@@ -64,8 +90,18 @@ class _PersonalProfileState extends State<PersonalProfile> {
                           SizedBox(
                             height: 12.0,
                           ),
-                          TextFormField(
-                            decoration: textFieldDecoration,
+                          GestureDetector(
+                            onTap: () => _selectDate(context),
+                            child: AbsorbPointer(
+                              child: TextFormField(
+                                  decoration: formTextFieldStyle,
+                                  controller: _dateController,
+                                  validator: (value) {
+                                    if (value.isEmpty)
+                                      return "Please select your Date of birth";
+                                    return null;
+                                  }),
+                            ),
                           ),
                           SizedBox(
                             height: 14.0,
@@ -81,7 +117,7 @@ class _PersonalProfileState extends State<PersonalProfile> {
                                 icon: Icon(Icons.keyboard_arrow_down_sharp),
                                 isExpanded: true,
                                 underline: SizedBox(),
-                                style:TextStyle(
+                                style: TextStyle(
                                     fontFamily: 'Montserrat',
                                     fontSize: 14,
                                     color: Colors.black,
@@ -107,7 +143,14 @@ class _PersonalProfileState extends State<PersonalProfile> {
                             height: 12.0,
                           ),
                           TextFormField(
-                            decoration: textFieldDecoration,
+                            decoration: formTextFieldStyle,
+                            keyboardType: TextInputType.number,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Enter your Pan number';
+                              }
+                              return null;
+                            },
                           ),
                           SizedBox(
                             height: 14.0,
@@ -157,7 +200,7 @@ class _PersonalProfileState extends State<PersonalProfile> {
                                 icon: Icon(Icons.keyboard_arrow_down_sharp),
                                 isExpanded: true,
                                 underline: SizedBox(),
-                                style:TextStyle(
+                                style: TextStyle(
                                     fontFamily: 'Montserrat',
                                     fontSize: 14,
                                     color: Colors.black,
@@ -220,9 +263,15 @@ class _PersonalProfileState extends State<PersonalProfile> {
                             height: 12.0,
                           ),
                           TextFormField(
-                            decoration: textFieldDecoration,
+                            decoration: formTextFieldStyle,
                             maxLines: null,
                             keyboardType: TextInputType.multiline,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Enter your address';
+                              }
+                              return null;
+                            },
                           ),
                           SizedBox(
                             height: 14.0,
@@ -232,7 +281,14 @@ class _PersonalProfileState extends State<PersonalProfile> {
                             height: 12.0,
                           ),
                           TextFormField(
-                            decoration: textFieldDecoration,
+                            decoration: formTextFieldStyle,
+                            keyboardType: TextInputType.number,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Enter your Pin Code';
+                              }
+                              return null;
+                            },
                           ),
                         ]),
                   ),
@@ -243,5 +299,20 @@ class _PersonalProfileState extends State<PersonalProfile> {
         ),
       ),
     );
+  }
+
+  _selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2019, 8),
+        lastDate: DateTime(2100));
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+        var date =
+            "${picked.toLocal().day}/${picked.toLocal().month}/${picked.toLocal().year}";
+        _dateController.text = date;
+      });
   }
 }

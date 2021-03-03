@@ -45,3 +45,19 @@ var tabTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
   fontSize: 14.0,
 );
+
+var formTextFieldStyle = InputDecoration(
+  contentPadding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+  border: InputBorder.none,
+  fillColor: Colors.white,
+  filled: true,
+  errorBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Color(0xffE8E9EA)),
+      borderRadius: BorderRadius.circular(28.0)),
+  focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Color(0xffE8E9EA)),
+      borderRadius: BorderRadius.circular(28.0)),
+  enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Color(0xffE8E9EA)),
+      borderRadius: BorderRadius.circular(28.0)),
+);

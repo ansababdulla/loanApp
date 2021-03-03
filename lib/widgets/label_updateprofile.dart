@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class UpdateProfileLabel extends StatelessWidget {
   UpdateProfileLabel(this.label);
   final String label;
@@ -12,7 +11,7 @@ class UpdateProfileLabel extends StatelessWidget {
           fontFamily: "Montserrat",
           fontSize: 14,
           color: Color(0xFF676C6D),
-          fontWeight: FontWeight.w600),
+          fontWeight: FontWeight.w700),
       // style: GoogleFonts.montserrat(
       //     fontSize: 14,
       //     color: Color(0xFF676C6D),

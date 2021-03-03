@@ -88,7 +88,7 @@ class _OtpVerificaion extends State<OtpVerfication>
                               style: TextStyle(
                                   fontFamily: 'Montserrat',
                                   fontSize: Responsive.height(26, context),
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w600,
                                   color: Colors.black),
                             ),
                           ),
@@ -110,7 +110,7 @@ class _OtpVerificaion extends State<OtpVerfication>
                                           fontFamily: 'Montserrat',
                                           fontSize:
                                               Responsive.height(26, context),
-                                          fontWeight: FontWeight.w500,
+                                          fontWeight: FontWeight.w600,
                                           color: Colors.black),
                                     ),
                                   ),
@@ -139,7 +139,7 @@ class _OtpVerificaion extends State<OtpVerfication>
                               style: TextStyle(
                                   fontFamily: 'Montserrat',
                                   fontSize: Responsive.height(14, context),
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w600,
                                   color: Color(0xff676C6D)),
                             ),
                           ),
@@ -193,7 +193,7 @@ class _OtpVerificaion extends State<OtpVerfication>
                                       fontFamily: 'Montserrat',
                                       fontSize: Responsive.height(12, context),
                                       color: Color(0xff6478D3),
-                                      fontWeight: FontWeight.w700)),
+                                      fontWeight: FontWeight.bold)),
                               onTap: () {},
                             ),
                           )

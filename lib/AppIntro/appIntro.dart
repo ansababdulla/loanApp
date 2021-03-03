@@ -73,7 +73,7 @@ class _AppIntro extends State<AppIntro> with TickerProviderStateMixin {
                               fontFamily: 'Montserrat',
                               color: Colors.black,
                               fontSize: size.height * 0.044,
-                              fontWeight: FontWeight.w700))),
+                              fontWeight: FontWeight.bold))),
                   Padding(
                     padding: EdgeInsets.only(top: size.height * 0.04),
                     child: Text(i['subText'],
@@ -81,7 +81,7 @@ class _AppIntro extends State<AppIntro> with TickerProviderStateMixin {
                             fontFamily: 'Montserrat',
                             color: Colors.black,
                             fontSize: size.height * 0.017,
-                            fontWeight: FontWeight.w500)),
+                            fontWeight: FontWeight.w600)),
                   ),
                 ]);
           },

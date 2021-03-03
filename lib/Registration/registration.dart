@@ -96,7 +96,7 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                                                   fontSize: Responsive.height(
                                                       26, context),
                                                   fontWeight:
-                                                      FontWeight.w500))),
+                                                      FontWeight.w600))),
                                       Padding(
                                           padding: EdgeInsets.only(
                                               left: size.width * 0.11,
@@ -109,7 +109,7 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                                                   fontSize: Responsive.height(
                                                       26, context),
                                                   fontWeight:
-                                                      FontWeight.w700))),
+                                                      FontWeight.bold))),
                                       Padding(
                                           padding: EdgeInsets.only(
                                               left: size.width * 0.11,
@@ -125,7 +125,7 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                                                   fontSize: Responsive.height(
                                                       14, context),
                                                   fontWeight:
-                                                      FontWeight.w500))),
+                                                      FontWeight.w600))),
                                       Form(
                                           key: _formKey,
                                           child: Column(children: [
@@ -143,22 +143,46 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                                                     height: Responsive.height(
                                                         62, context),
                                                     child: TextFormField(
-                                                        decoration: InputDecoration(
-                                                            border: InputBorder
-                                                                .none,
-                                                            focusedBorder:
-                                                                InputBorder
-                                                                    .none,
-                                                            enabledBorder:
-                                                                InputBorder
-                                                                    .none,
-                                                            errorBorder:
-                                                                InputBorder
-                                                                    .none,
-                                                            disabledBorder:
-                                                                InputBorder.none,
-                                                            hintText: 'Mobile number',
-                                                            hintStyle: TextStyle(fontFamily: 'Montserrat', color: Color(0xff8D92A3), fontSize: Responsive.height(14, context), fontWeight: FontWeight.w500)),
+                                                        decoration:
+                                                            InputDecoration(
+                                                                enabledBorder:
+                                                                    UnderlineInputBorder(
+                                                                  borderSide:
+                                                                      BorderSide(
+                                                                          color:
+                                                                              Color(0xFFF1F3F8)),
+                                                                ),
+                                                                focusedBorder:
+                                                                    UnderlineInputBorder(
+                                                                  borderSide:
+                                                                      BorderSide(
+                                                                          color:
+                                                                              Color(0xFFF1F3F8)),
+                                                                ),
+                                                                // border: InputBorder
+                                                                //     .none,
+                                                                // focusedBorder:
+                                                                //     InputBorder
+                                                                //         .none,
+                                                                // enabledBorder:
+                                                                //     InputBorder
+                                                                //         .none,
+                                                                // errorBorder:
+                                                                //     InputBorder
+                                                                //         .none,
+                                                                // disabledBorder:
+                                                                //     InputBorder.none,
+                                                                hintText:
+                                                                    'Mobile number',
+                                                                hintStyle: TextStyle(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    color: Color(
+                                                                        0xff8D92A3),
+                                                                    fontSize: Responsive.height(
+                                                                        14, context),
+                                                                    fontWeight:
+                                                                        FontWeight.w600)),
                                                         keyboardType: TextInputType.number,
                                                         validator: (value) {
                                                           if (value.isEmpty) {
@@ -358,7 +382,7 @@ class _RegistrationPage2 extends State<RegistrationPage2>
                                       fontFamily: 'Montserrat',
                                       fontSize: Responsive.height(26, context),
                                       color: Colors.black,
-                                      fontWeight: FontWeight.w500),
+                                      fontWeight: FontWeight.w600),
                                 )),
                             Padding(
                                 padding: EdgeInsets.only(
@@ -371,7 +395,7 @@ class _RegistrationPage2 extends State<RegistrationPage2>
                                       fontFamily: 'Montserrat',
                                       fontSize: Responsive.height(26, context),
                                       color: Colors.black,
-                                      fontWeight: FontWeight.w700),
+                                      fontWeight: FontWeight.bold),
                                 )),
                             Padding(
                               padding: EdgeInsets.only(
@@ -383,7 +407,7 @@ class _RegistrationPage2 extends State<RegistrationPage2>
                                       fontFamily: 'Montserrat',
                                       color: Color(0xff676C6D),
                                       fontSize: Responsive.height(14, context),
-                                      fontWeight: FontWeight.w500)),
+                                      fontWeight: FontWeight.w600)),
                             ),
                             Form(
                                 key: _formKey,
@@ -402,12 +426,22 @@ class _RegistrationPage2 extends State<RegistrationPage2>
                                               Responsive.height(62, context),
                                           child: TextFormField(
                                             decoration: InputDecoration(
-                                                border: InputBorder.none,
-                                                focusedBorder: InputBorder.none,
-                                                enabledBorder: InputBorder.none,
-                                                errorBorder: InputBorder.none,
-                                                disabledBorder:
-                                                    InputBorder.none,
+                                                enabledBorder:
+                                                    UnderlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      color: Color(0xFFF1F3F8)),
+                                                ),
+                                                focusedBorder:
+                                                    UnderlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      color: Color(0xFFF1F3F8)),
+                                                ),
+                                                // border: InputBorder.none,
+                                                // focusedBorder: InputBorder.none,
+                                                // enabledBorder: InputBorder.none,
+                                                // errorBorder: InputBorder.none,
+                                                // disabledBorder:
+                                                //     InputBorder.none,
                                                 hintText: ' Full name',
                                                 hintStyle: TextStyle(
                                                     fontFamily: 'Montserrat',
@@ -415,7 +449,7 @@ class _RegistrationPage2 extends State<RegistrationPage2>
                                                     fontSize: Responsive.height(
                                                         14, context),
                                                     fontWeight:
-                                                        FontWeight.w500)),
+                                                        FontWeight.w600)),
                                             validator: (value) {
                                               if (value.isEmpty) {
                                                 return 'please enter your name';
@@ -581,7 +615,7 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                       fontFamily: 'Montserrat',
                                       fontSize: Responsive.height(26, context),
                                       color: Colors.black,
-                                      fontWeight: FontWeight.w500),
+                                      fontWeight: FontWeight.w600),
                                 )),
                             Padding(
                                 padding: EdgeInsets.only(
@@ -594,7 +628,7 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                       fontFamily: 'Montserrat',
                                       fontSize: Responsive.height(26, context),
                                       color: Colors.black,
-                                      fontWeight: FontWeight.w700),
+                                      fontWeight: FontWeight.bold),
                                 )),
                             Padding(
                               padding: EdgeInsets.only(
@@ -606,7 +640,7 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                       fontFamily: 'Montserrat',
                                       color: Color(0xff676C6D),
                                       fontSize: Responsive.height(14, context),
-                                      fontWeight: FontWeight.w500)),
+                                      fontWeight: FontWeight.w600)),
                             ),
                             Form(
                                 key: _formKey,
@@ -622,18 +656,28 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                         height: Responsive.height(62, context),
                                         child: TextFormField(
                                           decoration: InputDecoration(
-                                              border: InputBorder.none,
-                                              focusedBorder: InputBorder.none,
-                                              enabledBorder: InputBorder.none,
-                                              errorBorder: InputBorder.none,
-                                              disabledBorder: InputBorder.none,
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Color(0xFFF1F3F8)),
+                                              ),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Color(0xFFF1F3F8)),
+                                              ),
+                                              // border: InputBorder.none,
+                                              // focusedBorder: InputBorder.none,
+                                              // enabledBorder: InputBorder.none,
+                                              // errorBorder: InputBorder.none,
+                                              // disabledBorder: InputBorder.none,
                                               hintText: 'Enter your email ID',
                                               hintStyle: TextStyle(
                                                   fontFamily: 'Montserrat',
                                                   color: Color(0xff8D92A3),
                                                   fontSize: Responsive.height(
                                                       14, context),
-                                                  fontWeight: FontWeight.w500)),
+                                                  fontWeight: FontWeight.w600)),
                                           validator: (value) {
                                             if (RegExp(
                                                     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -656,18 +700,23 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                         height: Responsive.height(62, context),
                                         child: TextFormField(
                                           decoration: InputDecoration(
-                                              border: InputBorder.none,
-                                              focusedBorder: InputBorder.none,
-                                              enabledBorder: InputBorder.none,
-                                              errorBorder: InputBorder.none,
-                                              disabledBorder: InputBorder.none,
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Color(0xFFF1F3F8)),
+                                              ),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Color(0xFFF1F3F8)),
+                                              ),
                                               hintText: 'your location',
                                               hintStyle: TextStyle(
                                                   fontFamily: 'Montserrat',
                                                   color: Color(0xff8D92A3),
                                                   fontSize: Responsive.height(
                                                       14, context),
-                                                  fontWeight: FontWeight.w500)),
+                                                  fontWeight: FontWeight.w600)),
                                           validator: (value) {
                                             if (value.isEmpty) {
                                               return 'please enter your location';
@@ -700,15 +749,19 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                                     fontSize: Responsive.height(
                                                         14, context),
                                                     fontWeight:
-                                                        FontWeight.w500),
+                                                        FontWeight.w600),
                                                 icon:
                                                     Icon(Icons.calendar_today),
-                                                border: InputBorder.none,
-                                                focusedBorder: InputBorder.none,
-                                                enabledBorder: InputBorder.none,
-                                                errorBorder: InputBorder.none,
-                                                disabledBorder:
-                                                    InputBorder.none,
+                                                enabledBorder:
+                                                    UnderlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      color: Color(0xFFF1F3F8)),
+                                                ),
+                                                focusedBorder:
+                                                    UnderlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      color: Color(0xFFF1F3F8)),
+                                                ),
                                               ),
                                               validator: (value) {
                                                 if (value.isEmpty)
@@ -735,7 +788,7 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                                         15, context),
                                                     color: Colors.white,
                                                     fontWeight:
-                                                        FontWeight.w500)),
+                                                        FontWeight.bold)),
                                             onPressed: () => {
                                               if (_formKey.currentState
                                                   .validate())
@@ -775,7 +828,7 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                           fontFamily: 'Montserrat',
                           fontSize: Responsive.height(11, context),
                           color: Color(0xff6478D3),
-                          fontWeight: FontWeight.w500)),
+                          fontWeight: FontWeight.w600)),
                 ),
                 onTap: () {},
               ),
