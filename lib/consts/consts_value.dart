@@ -33,6 +33,12 @@ var stepperTextStyle = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 14.0,
     color: Color(0xFF242A39));
+    
+    var stepperTextStyleDashboard = TextStyle(
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w600,
+    fontSize: 11.0,
+    color: Color(0xFF242A39));
 
 var tabTextStyle = TextStyle(
   fontFamily: 'Montserrat',

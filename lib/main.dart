@@ -1,6 +1,3 @@
-import 'package:chickly/AppyLoan/NewLoan/applyLoanTab.dart';
-import 'BasicInfo/basic_information.dart';
-import 'file:///E:/aaagit/chickly/chickly-app/lib/informations/step3.dart';
 import 'package:chickly/redux/app_state.dart';
 import 'package:chickly/redux/reducers.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +20,6 @@ class MyApp extends StatelessWidget {
   );
   @override
   Widget build(BuildContext context) {
-    return StoreProvider(
-        store: _store,
-        child: MaterialApp(debugShowCheckedModeBanner: false, home: Home()));
+    return StoreProvider(store: _store, child: MaterialApp(home: Home()));
   }
 }

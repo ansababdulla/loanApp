@@ -1,12 +1,14 @@
 import 'package:chickly/AppyLoan/NewLoan/applyLoanTab.dart';
+import 'package:chickly/Common/piechart.dart';
 import 'package:chickly/profile/profile.dart';
 import 'package:chickly/utils/responsive.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../redux/app_state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:chickly/AppyLoan/NewLoan/apply_loan.dart';
+import '../Common/timeline.dart';
 
 class Dashboard extends StatefulWidget {
   _Dashboard createState() => _Dashboard();
@@ -260,7 +262,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                       bottom: Responsive.height(15, context)),
                   child: Container(
                     width: Responsive.width(335, context),
-                    height: Responsive.height(375, context),
+                    height: Responsive.height(410, context),
                     color: Color(0xff191B23),
                     child: Container(
                       decoration: BoxDecoration(
@@ -340,10 +342,11 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        left: Responsive.width(70, context),
-                                        right: Responsive.width(30, context),
                                         top: Responsive.height(15, context)),
-                                    child: Row(children: [
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
                                       Text(
                                         'Score range from  ',
                                         style: TextStyle(
@@ -545,7 +548,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                     crossAxisAlignment:
@@ -621,8 +624,9 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                           Column(children: [
                             Padding(
                                 padding: EdgeInsets.only(
-                                    left: 46, right: 45, bottom: 65),
-                                child: Text('data')),
+                                    left: Responsive.width(10, context), right: Responsive.width(10, context), bottom: Responsive.height(20, context)),
+                                child:timeLine(context)
+                            ),
                           ]),
                           Column(children: [
                             Container(
@@ -697,8 +701,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: Responsive.width(26, context),
-                                            bottom:
-                                                Responsive.height(37, context)),
+                                            bottom:Responsive.height(37, context)),
                                         child: Text('State bank of india',
                                             style: TextStyle(
                                                 fontFamily: 'Montserrat',
@@ -738,21 +741,49 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        left: Responsive.width(25.5, context),
-                                        top: Responsive.height(22.41, context),
-                                        right: Responsive.width(62.41, context),
-                                        bottom:
-                                            Responsive.height(28.5, context)),
-                                    child: Text('data',
-                                        style: TextStyle(
-                                            fontFamily: 'Montserrat',
-                                            color: Color(0xff8C9192),
-                                            fontSize:
-                                                Responsive.height(12, context),
-                                            fontWeight: FontWeight.w300)),
+                                      left: Responsive.width(25.5, context),
+                                      top: Responsive.height(28.41, context),
+                                      right: Responsive.width(62.41, context),
+                                      bottom:Responsive.height(28.5, context)),
+                                    child: PieChart(
+                                      PieChartData(
+                                        borderData: FlBorderData(
+                                          show: false,
+                                        ),
+                                        sectionsSpace: 0,
+                                        centerSpaceRadius: Responsive.width(30, context),
+                                        sections: [
+                                          PieChartSectionData(
+                                            color: const Color(0xffF7F8F9),
+                                            value: 60,
+                                            title: '',
+                                            radius: Responsive.width(8, context),
+                                            titleStyle: TextStyle(
+                                              fontSize: 11, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+                                          ),
+                                          PieChartSectionData(
+                                            color: const Color(0xff6478D3),
+                                            value: 30,
+                                            title: '',
+                                            radius: Responsive.width(15, context),
+                                            titleStyle: TextStyle(
+                                              fontSize: 11, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+                                          ),
+                                          PieChartSectionData(
+                                            color: Color(0xffF7B579),
+                                            value: 10,
+                                            title: '',
+                                            radius: Responsive.width(12, context),
+                                            titleStyle: TextStyle(
+                                              fontSize: 11, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+                                          ),
+                                        ]
+                                      )
+                                    )
                                   ),
                                   Padding(
                                       padding: EdgeInsets.only(

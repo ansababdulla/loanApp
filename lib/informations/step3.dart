@@ -122,7 +122,7 @@ class _StepThreeVerify extends State<StepThreeVerify>
                                       fontFamily: 'Montserrat',
                                       color: Color(0xff2D3233),
                                       fontSize: Responsive.height(14, context),
-                                      fontWeight: FontWeight.w600)),
+                                      fontWeight: FontWeight.w700)),
                               if (uploadStatus == "Success" &&
                                   documentType == "proof")
                                 Text('Success',
@@ -431,7 +431,7 @@ class _StepThreeVerify extends State<StepThreeVerify>
                                       fontFamily: 'Montserrat',
                                       color: Color(0xff2D3233),
                                       fontSize: Responsive.height(14, context),
-                                      fontWeight: FontWeight.w600)),
+                                      fontWeight: FontWeight.w700)),
                               if (uploadStatus == "Success" &&
                                   documentType == "income")
                                 Text('Success',
@@ -607,7 +607,7 @@ class _StepThreeVerify extends State<StepThreeVerify>
                           fontFamily: 'Montserrat',
                           fontSize: Responsive.height(13, context),
                           color: Colors.white,
-                          fontWeight: FontWeight.w500)),
+                          fontWeight: FontWeight.w700)),
                   onPressed: () {},
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(30.0)),
