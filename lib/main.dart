@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import './home/home.dart';
 import 'package:redux/redux.dart';
+import 'BasicInfo/basic_information.dart';
 import 'Dashboard/dashboardTabs.dart';
 import 'informations/personal_info.dart';
 import 'informations/step1.dart';
@@ -20,6 +21,8 @@ class MyApp extends StatelessWidget {
   );
   @override
   Widget build(BuildContext context) {
-    return StoreProvider(store: _store, child: MaterialApp(home: Home()));
+    return StoreProvider(
+        store: _store,
+        child: MaterialApp(debugShowCheckedModeBanner: true, home: Home()));
   }
 }

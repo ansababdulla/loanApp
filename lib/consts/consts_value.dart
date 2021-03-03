@@ -33,8 +33,8 @@ var stepperTextStyle = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 14.0,
     color: Color(0xFF242A39));
-    
-    var stepperTextStyleDashboard = TextStyle(
+
+var stepperTextStyleDashboard = TextStyle(
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w600,
     fontSize: 11.0,
@@ -51,6 +51,9 @@ var formTextFieldStyle = InputDecoration(
   border: InputBorder.none,
   fillColor: Colors.white,
   filled: true,
+  focusedErrorBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Color(0xffE8E9EA)),
+      borderRadius: BorderRadius.circular(28.0)),
   errorBorder: OutlineInputBorder(
       borderSide: BorderSide(color: Color(0xffE8E9EA)),
       borderRadius: BorderRadius.circular(28.0)),
