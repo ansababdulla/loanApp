@@ -1,4 +1,8 @@
 import 'dart:io';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 64c6a4ffccfa2b55781da48d9d3bbebe0d6330e4
 import 'package:chickly/consts/consts_value.dart';
 import 'package:chickly/informations/personal_info.dart';
 import 'package:chickly/utils/appcolors.dart';
