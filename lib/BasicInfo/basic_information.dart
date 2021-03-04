@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'file:///E:/aaagit/chickly/chickly-app/lib/informations/step3.dart';
 import 'package:chickly/consts/consts_value.dart';
 import 'package:chickly/informations/personal_info.dart';
 import 'package:chickly/utils/appcolors.dart';

@@ -268,8 +268,6 @@ class _Registration extends State<Registration> with TickerProviderStateMixin {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: Responsive.width(124, context),
-                      right: Responsive.width(124, context),
                       top: Responsive.height(50, context)),
                   child: GestureDetector(
                     child: Center(
@@ -740,6 +738,7 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                           child: AbsorbPointer(
                                             child: TextFormField(
                                               onSaved: (val) {},
+                                              style: TextStyle(fontSize: Responsive.height(12, context)),
                                               controller: _dateController,
                                               decoration: InputDecoration(
                                                 labelText: "Date of birth",
@@ -766,6 +765,7 @@ class _RegistrationPage3 extends State<RegistrationPage3>
                                               validator: (value) {
                                                 if (value.isEmpty)
                                                   return "Please select your DOB";
+                                                else
                                                 return null;
                                               },
                                             ),
@@ -818,8 +818,6 @@ class _RegistrationPage3 extends State<RegistrationPage3>
             )),
             Padding(
               padding: EdgeInsets.only(
-                  left: Responsive.width(124, context),
-                  right: Responsive.width(124, context),
                   top: Responsive.height(50, context)),
               child: GestureDetector(
                 child: Center(

@@ -101,7 +101,7 @@ class _AppIntro extends State<AppIntro> with TickerProviderStateMixin {
       primary: false,
       body: Column(children: <Widget>[
         Container(
-          height: size.height * 0.69,
+          height: Responsive.height(600, context),
           child: basicSlider(context),
         ),
         SizedBox(height: Responsive.height(30, context)),
