@@ -127,7 +127,7 @@ class _OtpVerificaion extends State<OtpVerfication>
                                       padding: EdgeInsets.only(
                                           left: Responsive.width(20, context),
                                           right: Responsive.width(20, context),
-                                          bottom: Responsive.height(50, context)),
+                                          bottom: Responsive.height(20, context)),
                                       child: PinCodeTextField(
                                         appContext: context,
                                         length: 4,

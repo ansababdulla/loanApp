@@ -1,3 +1,4 @@
+import 'package:chickly/PersonalLoan/basicInfo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -229,7 +230,7 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                         Padding(
                             padding: EdgeInsets.only(right: 43, bottom: 30),
                             child: Container(
-                              width: Responsive.width(113, context),
+                              width: Responsive.width(116, context),
                               height: Responsive.height(143, context),
                               child: new Column(children: [
                                 GestureDetector(
@@ -300,6 +301,14 @@ class _LoanType extends State<LoanType> with TickerProviderStateMixin {
                                           builder: (context) =>
                                               BasicInformations(),
                                         ))
+                                      }
+                                      else if(loanType == "personal") {
+                                        Navigator.of(context)
+                                            .pushReplacement(MaterialPageRoute(
+                                          builder: (context) =>
+                                              BasicInformationsPersonal(),
+                                        ))
+
                                       }
                                   }
                               : null,
